@@ -37,3 +37,11 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }} bundle exec jekyll algolia
+      - name: Index Doxygen API pages
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.checkcommit.outputs.recent_commit == 'true' }}
+        working-directory: website
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+        run: |
+          pip install beautifulsoup4 requests "algoliasearch>=4.0"
+          python scripts/index_doxygen.py
