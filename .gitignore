@@ -7,4 +7,6 @@ _pdf
 .idea
 vendor/
 .bundle/
+__pycache__/
+*.pyc
 Gemfile.lock
