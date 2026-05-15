@@ -8,3 +8,8 @@ _pdf
 vendor/
 .bundle/
 Gemfile.lock
+
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock

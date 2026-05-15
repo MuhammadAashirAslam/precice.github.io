@@ -1,0 +1,17 @@
+# Hugo configuration for preCICE website
+# This file coexists with Jekyll's _config.yml during the migration period.
+# See implementation.md for the full migration plan.
+
+baseURL       = "https://precice.org/"
+languageCode  = "en-us"
+title         = "preCICE - The Coupling Library"
+
+# Disabled until M2 when module mounts preserve full git history.
+# Shallow clones collapse all dates to a single commit — see implementation.md §5.
+enableGitInfo = false
+
+# During the migration, Hugo uses a separate content directory to avoid
+# conflicts with Jekyll's content/ (which has index.html creating a leaf
+# bundle that swallows sibling pages). This will be consolidated in PR 5
+# (m1/content-restructure) when the full content migration happens.
+contentDir = "hugo-content"
