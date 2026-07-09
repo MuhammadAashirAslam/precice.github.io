@@ -37,6 +37,12 @@ exclude:
   - doxygen/
   - tools/
   - content/**/_index.md
+  - archetypes/
+  - layouts/
+  - public/
+  - resources/
+  - hugo.toml
+  - .hugo_build.lock
 # these are the files and directories that jekyll will exclude from the build
 
 highlighter: rouge

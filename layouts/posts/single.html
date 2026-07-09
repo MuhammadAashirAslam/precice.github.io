@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
+    <p class="post-meta">
+      {{ with .Date }}<time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}" itemprop="datePublished">{{ .Format "Jan 2, 2006" }}</time>{{ end }}
+      {{ with .Params.author }}<span itemprop="author" itemscope itemtype="https://schema.org/Person"> / <span itemprop="name">{{ . }}</span></span>{{ end }}
+      {{ with .Params.tags }}
+        /
+        {{ range $index, $tag := . }}{{ if $index }}, {{ end }}<a href="{{ printf "tag_%s.html" $tag | relURL }}">{{ $tag }}</a>{{ end }}
+      {{ end }}
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ with .Params.summary }}
+      <div class="summary">{{ . | markdownify }}</div>
+    {{ end }}
+    {{ .Content }}
+  </div>
+</article>
+{{ partial "commento.html" . }}
+{{ end }}
