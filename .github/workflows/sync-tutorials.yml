@@ -27,11 +27,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml
 
-      - name: Run Sync Script
-        run: |
-          python3 tools/sync_tutorials.py \
-            --module-toml config/_default/module/tutorials.toml \
-            --sidebar-yaml _data/sidebars/tutorial_sidebar.yml
+      - name: Run sync script
+        run: python tools/sync_tutorials.py --module-toml config/_default/module.toml --sidebar-yaml _data/sidebars/tutorial_sidebar.yml
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
