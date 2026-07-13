@@ -96,10 +96,6 @@ def generate_module_toml(
         logging.error(f"Failed to write toml file: {e}")
         sys.exit(1)
 
-class CustomDumper(yaml.Dumper):
-    def increase_indent(self, flow=False, *args, **kwargs):
-        return super().increase_indent(flow=flow, indentless=False)
-
 def update_sidebar_yaml(yaml_path: str, tutorials: set[str]):
     try:
         with open(yaml_path, "r") as f:
@@ -109,14 +105,8 @@ def update_sidebar_yaml(yaml_path: str, tutorials: set[str]):
         sys.exit(1)
 
     existing_urls = set()
-    all_tutorials_section = None
-
-    # Discover existing mapped URLs to avoid duplicates
     for entry in sidebar.get("entries", []):
         for folder in entry.get("folders", []):
-            if folder.get("title") == "All tutorials":
-                all_tutorials_section = folder
-                
             for item in folder.get("folderitems", []):
                 if "url" in item:
                     existing_urls.add(item["url"])
@@ -125,36 +115,28 @@ def update_sidebar_yaml(yaml_path: str, tutorials: set[str]):
                         if "url" in subitem:
                             existing_urls.add(subitem["url"])
 
-    if all_tutorials_section is None:
-        logging.warning("Could not find 'All tutorials' section in the sidebar YAML. Skipping sidebar update.")
-        return
-
-    if "folderitems" not in all_tutorials_section:
-        all_tutorials_section["folderitems"] = []
-        
-    new_added = 0
+    new_blocks = []
     for folder in sorted(tutorials):
         expected_url = "/quickstart.html" if folder == "quickstart" else f"/tutorials-{folder}.html"
         
         if expected_url not in existing_urls:
             formatted_title = folder.replace("-", " ").capitalize()
-            all_tutorials_section["folderitems"].append({
-                "title": formatted_title,
-                "url": expected_url,
-                "output": "web, pdf"
-            })
+            # Generate the YAML block manually to preserve file formatting
+            block = f"\n    - title: {formatted_title}\n"
+            block += f"      url: {expected_url}\n"
+            block += f"      output: web, pdf\n"
+            new_blocks.append(block)
             existing_urls.add(expected_url)
-            new_added += 1
             logging.info(f"Appended missing tutorial to sidebar: {formatted_title}")
             
-    if new_added > 0:
-        all_tutorials_section["folderitems"].sort(key=lambda x: x["title"])
+    if new_blocks:
         try:
-            with open(yaml_path, "w") as f:
-                yaml.dump(sidebar, f, Dumper=CustomDumper, default_flow_style=False, sort_keys=False)
-            logging.info(f"Updated {yaml_path} successfully.")
+            with open(yaml_path, "a") as f:
+                for block in new_blocks:
+                    f.write(block)
+            logging.info(f"Updated {yaml_path} successfully by appending {len(new_blocks)} tutorials.")
         except Exception as e:
-            logging.error(f"Failed to write sidebar yaml: {e}")
+            logging.error(f"Failed to append to sidebar yaml: {e}")
             sys.exit(1)
     else:
         logging.info("No new tutorials found. Sidebar is already up-to-date.")
