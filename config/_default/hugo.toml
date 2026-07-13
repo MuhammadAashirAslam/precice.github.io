@@ -48,7 +48,7 @@ src = "https://cdn.jsdelivr.net/npm/mermaid@11.12.3/dist/mermaid.min.js"
 "imported/openfoam-adapter" = "https://github.com/precice/openfoam-adapter/edit/develop/"
 "imported/preeco-orga" = "https://github.com/precice/preeco-orga/edit/main/"
 "imported/su2-adapter" = "https://github.com/precice/su2-adapter/edit/develop/"
-"imported/tutorials" = "https://github.com/precice/tutorials/edit/develop/"
+"github.com/precice/tutorials" = "https://github.com/precice/tutorials/edit/master/"
 
 [security]
 allowContent = [".*"]
