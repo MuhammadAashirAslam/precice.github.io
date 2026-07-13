@@ -5,6 +5,7 @@
     {{- $filePath = .Path -}}
     {{- $filename := replace .Filename "\\" "/" -}}
     {{- $sourcePath = replaceRE `^.*/(content|imported)/` `$1/` $filename -}}
+    {{- $sourcePath = replaceRE `^.*/pkg/mod/(github\.com/[^/]+/[^/@]+)(@[^/]+)?/(.*)$` `$1/$3` $sourcePath -}}
     {{- if eq $sourcePath $filename -}}
       {{- $sourcePath = replaceRE `^.*/([^/]+\.[^/.]+)$` `$1` $filename -}}
     {{- end -}}

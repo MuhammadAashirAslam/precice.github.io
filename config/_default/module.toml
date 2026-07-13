@@ -57,17 +57,20 @@ target = "content/docs/adapters/calculix"
 files = ["! adapter-calculix-overview.md"]
 
 # code_aster adapter
-[[mounts]]
-source = "imported/code_aster-adapter/docs/adapter-code_aster.md"
-target = "content/docs/adapters/code_aster/_index.md"
+[[imports]]
+path = "github.com/precice/code_aster-adapter"
 
-[[mounts]]
-source = "imported/code_aster-adapter/docs/images"
-target = "content/docs/adapters/code_aster/images"
+  [[imports.mounts]]
+  source = "docs/adapter-code_aster.md"
+  target = "content/docs/adapters/code_aster/_index.md"
 
-[[mounts]]
-source = "imported/code_aster-adapter/docs/thesis-excerpt-cheung.pdf"
-target = "content/docs/adapters/code_aster/thesis-excerpt-cheung.pdf"
+  [[imports.mounts]]
+  source = "docs/images"
+  target = "content/docs/adapters/code_aster/images"
+
+  [[imports.mounts]]
+  source = "docs/thesis-excerpt-cheung.pdf"
+  target = "content/docs/adapters/code_aster/thesis-excerpt-cheung.pdf"
 
 # deal.II adapter
 [[mounts]]
