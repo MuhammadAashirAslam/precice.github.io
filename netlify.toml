@@ -1,5 +1,5 @@
 [build]
-  command = "hugo --gc --minify"
+  command = "sed -i '/github.com\\/precice\\/tutorials/d' go.sum && GOSUMDB=off go mod download github.com/precice/tutorials && hugo --gc --minify"
   publish = "public"
 [build.environment]
   GOPROXY = "https://proxy.golang.org,direct"
