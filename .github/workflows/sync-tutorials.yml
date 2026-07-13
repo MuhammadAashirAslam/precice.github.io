@@ -4,6 +4,7 @@ on:
   schedule:
     # Run every day at 03:00 UTC
     - cron: '0 3 * * *'
+  push: # Trigger on push so GitHub registers the workflow
   workflow_dispatch: # Allow manual triggering
 
 jobs:
