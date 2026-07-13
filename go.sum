@@ -1,6 +1,6 @@
 github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9 h1:7mrhwlQx9rSMPFQ+aCfCbuelA3qhDWhrtuxkW5oWCfE=
 github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9/go.mod h1:9mtpaThVgf0DaN9ijNGupNaC6M3GRGJzBBCfFiluxhk=
-github.com/precice/tutorials v202104.1.2-0.20240416191406-98a78fe2dc2f+incompatible h1:GKCNdt97UyExiDLVrnJT0pYMU0KC3jnEc0cVuYuiQV4=
+github.com/precice/tutorials v202104.1.2-0.20240416191406-98a78fe2dc2f+incompatible h1:7nU+QRL1uq9IP/5UZEm8lABSBbL1Zn8f2sTfDFIuBeU=
 github.com/precice/tutorials v202104.1.2-0.20240416191406-98a78fe2dc2f+incompatible/go.mod h1:zILvlNlwVxg3xyjkcc2eOA8H2Z14nuzxuR5e+ctDxuQ=
 github.com/precice/tutorials v202104.1.2-0.20260712173540-97ee5fd0b145+incompatible h1:Ij/Q/M3n3wTv1WVn63esP+Em00cXU5So1OcHTtDQb+Y=
 github.com/precice/tutorials v202104.1.2-0.20260712173540-97ee5fd0b145+incompatible/go.mod h1:zILvlNlwVxg3xyjkcc2eOA8H2Z14nuzxuR5e+ctDxuQ=
