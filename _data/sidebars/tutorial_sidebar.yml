@@ -46,9 +46,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: ASTE turbine
-      url: /tutorials-aste-turbine.html
-      output: web, pdf
 
     - title: Breaking dam with flexible pillar 2D
       url: /tutorials-breaking-dam-2d.html
