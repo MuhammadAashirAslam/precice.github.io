@@ -1,0 +1,47 @@
+name: Update Hugo modules
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 0 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/create-github-app-token@v3
+        id: app-token
+        with:
+          client-id: ${{ vars.WEBSITE_UPDATER_CLIENT_ID }}
+          private-key: ${{ secrets.WEBSITE_UPDATER_KEY }}
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: false
+          token: ${{ steps.app-token.outputs.token }}
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.26.3"
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.163.3"
+          extended: true
+      - name: Synchronize Hugo module revisions
+        env:
+          GONOPROXY: "github.com/precice/*"
+          GONOSUMDB: "github.com/precice/tutorials,github.com/precice/code_aster-adapter"
+        run: python3 tools/sync_hugo_modules.py
+      - name: Commit update
+        run: |
+          git config --local user.name "precice-bot"
+          git config --local user.email "info@precice.org"
+          git diff --quiet go.mod go.sum || git commit -m "Update Hugo modules" go.mod go.sum
+      - name: Push commit
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ steps.app-token.outputs.token }}
+          branch: ${{ github.ref }}

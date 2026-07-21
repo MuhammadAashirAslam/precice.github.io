@@ -1,6 +1,9 @@
 [build]
-  command = "sed -i '/github.com\\/precice\\/tutorials/d' go.sum && GOFLAGS=\"-mod=mod\" hugo --gc --minify"
+  command = "hugo --gc --minify"
   publish = "public"
 [build.environment]
+  GO_VERSION = "1.26.3"
+  HUGO_VERSION = "0.163.3"
   GOPROXY = "https://proxy.golang.org,direct"
+  GONOPROXY = "github.com/precice/*"
   GONOSUMDB = "github.com/precice/tutorials,github.com/precice/code_aster-adapter"
