@@ -226,3 +226,7 @@ entries:
     - title: Wolf-sheep-grass model with soil creep
       url: /tutorials-wolf-sheep-soil-creep.html
       output: web, pdf
+
+    - title: Aste turbine
+      url: /tutorials-aste-turbine.html
+      output: web, pdf
