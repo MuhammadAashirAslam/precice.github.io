@@ -27,7 +27,6 @@ jobs:
           extended: true
       - name: Synchronize Hugo module revisions
         env:
-          GONOPROXY: "github.com/precice/*"
           GONOSUMDB: "github.com/precice/tutorials,github.com/precice/code_aster-adapter"
         run: python3 tools/sync_hugo_modules.py
       - name: Commit update
