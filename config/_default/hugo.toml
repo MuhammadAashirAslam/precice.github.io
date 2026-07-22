@@ -4,6 +4,10 @@ locale = "en-us"
 title = "preCICE - The Coupling Library"
 enableGitInfo = true
 
+[module]
+# Use the canonical Go module archive so its checksum matches go.sum.
+proxy = "https://proxy.golang.org,direct"
+
 [params]
 repository = "precice/precice.github.io"
 output = "web"
