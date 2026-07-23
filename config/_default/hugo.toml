@@ -3,6 +3,7 @@ baseURL = "https://precice.org/"
 locale = "en-us"
 title = "preCICE - The Coupling Library"
 enableGitInfo = true
+enableRobotsTXT = true
 
 [module]
 # Use the canonical Go module archive so its checksum matches go.sum.
@@ -28,9 +29,9 @@ precice_v2_citations = 233
 precice_v2_citations_url = "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=17974677460269868025,12004404035922881061"
 
 [params.algolia]
-application_id = "LIT6P0EW26"
-index_name = "jekyll"
-search_only_api_key = "760ed6be3e165d08b4a798ac4aa82fe4"
+application_id = "NFZUWQ3TD8"
+index_name = "precice-hugo-test"
+search_only_api_key = "471f6a53c442ad5949d349f030b9ad7e"
 nodes_to_index = "p,code,table"
 max_record_size = 20000
 
@@ -124,5 +125,20 @@ endLevel = 4
 ordered = false
 
 [outputs]
+home = ["HTML", "RSS", "Algolia", "SitemapIndex"]
 section = ["HTML"]
 
+[outputFormats.RSS]
+baseName = "feed"
+
+[outputFormats.Algolia]
+mediaType = "application/json"
+baseName = "algolia"
+isPlainText = true
+notAlternative = true
+
+[outputFormats.SitemapIndex]
+mediaType = "application/xml"
+baseName = "sitemap_index"
+isPlainText = true
+notAlternative = true
