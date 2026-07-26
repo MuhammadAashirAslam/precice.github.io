@@ -16,13 +16,13 @@ github.com/precice/fenicsx-adapter v1.0.2-0.20260716165953-17d67792f781 h1:ySnRn
 github.com/precice/fenicsx-adapter v1.0.2-0.20260716165953-17d67792f781/go.mod h1:CRcbNaBGmyNdmCPs7mZCdRp7Y9WL6HnEYAJjrRbhC0s=
 github.com/precice/fmi-runner v0.2.2-0.20260718084031-4003d4b47035 h1:ZyOXvc2rEUHWscMuhjJLHmVDdeWY6WfVHB2RCRgM4pM=
 github.com/precice/fmi-runner v0.2.2-0.20260718084031-4003d4b47035/go.mod h1:EleqiAITx34dkfFst5qa7R3vEp3zv0+Z+LztNucPNXo=
-github.com/precice/micro-manager v0.11.2-0.20260715073407-c4ebc7456757 h1:LW9OYYuwhsP7i6RXCjH4gRolNsBZS4WbQGuUBzBBxKQ=
-github.com/precice/micro-manager v0.11.2-0.20260715073407-c4ebc7456757/go.mod h1:cRbIdTJlfgVxeDIRT0jmbRULBC1eiqR43MdawB8Nazw=
+github.com/precice/micro-manager v0.11.2-0.20260724072804-a925ecb05518 h1:YI7yAGJEf0gLfHh1XFu+rbvCG8umWlTqVm7BDhdqv+M=
+github.com/precice/micro-manager v0.11.2-0.20260724072804-a925ecb05518/go.mod h1:cRbIdTJlfgVxeDIRT0jmbRULBC1eiqR43MdawB8Nazw=
 github.com/precice/openfoam-adapter v1.3.2-0.20260721103656-dcaa9b083780 h1:Nk6qtuqIAW1vj2HVwqs6U2Wxo86wFMBc8JtlfA4JAvI=
 github.com/precice/openfoam-adapter v1.3.2-0.20260721103656-dcaa9b083780/go.mod h1:VkhaDjB9nEvue1yw5V7PO4K21tPpkhI9jPiQ/dF+poo=
 github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe h1:vqFSYJSEksU2yu9muCaKF1/SL3RHK4GTvRB94plKNZY=
 github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe/go.mod h1:b+386uJGvHbRXqQArU0XswBG9gfoJ7hiszvbq2NYkUA=
 github.com/precice/su2-adapter v0.0.0-20260718101756-fde3106dab59 h1:7cOX7h49zur4oomae+1+P7jJpwsoXDtsDzB8AHDX10E=
 github.com/precice/su2-adapter v0.0.0-20260718101756-fde3106dab59/go.mod h1:62uO8/YUwX2R4w9RUlT/4fxWjKEwpEA312UYwvUaQbo=
-github.com/precice/tutorials v202104.1.2-0.20260721103733-59fac44b5801+incompatible h1:eZIQLxHCx/z1o9CCKLGq1IXYt5rfxXjjifidr0i3ipg=
-github.com/precice/tutorials v202104.1.2-0.20260721103733-59fac44b5801+incompatible/go.mod h1:zILvlNlwVxg3xyjkcc2eOA8H2Z14nuzxuR5e+ctDxuQ=
+github.com/precice/tutorials v202104.1.2-0.20260724170257-cd33e2dbacc5+incompatible h1:q4CVJ1yce9mYyQgugGU6n3g400FrE+nRwTkER/A/9jM=
+github.com/precice/tutorials v202104.1.2-0.20260724170257-cd33e2dbacc5+incompatible/go.mod h1:zILvlNlwVxg3xyjkcc2eOA8H2Z14nuzxuR5e+ctDxuQ=
