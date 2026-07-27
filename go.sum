@@ -6,8 +6,8 @@ github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9 h1:7mrh
 github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9/go.mod h1:9mtpaThVgf0DaN9ijNGupNaC6M3GRGJzBBCfFiluxhk=
 github.com/precice/dealii-adapter v0.0.0-20260718205912-55c1136200f5 h1:DA69FXg7pt12COo71+MEraCOHw0FAI7yQpYolWcC3ZM=
 github.com/precice/dealii-adapter v0.0.0-20260718205912-55c1136200f5/go.mod h1:Txux8IKhPrR8szFZSFrVDrYHBeDKhogDJSa4MSndoDI=
-github.com/precice/dumux-adapter v3.0.1-0.20260718090522-1329996bc4e2+incompatible h1:tyxBWzvL9GNhnW0YTbaG3JgTm6tYH9oARluPMktL1xs=
-github.com/precice/dumux-adapter v3.0.1-0.20260718090522-1329996bc4e2+incompatible/go.mod h1:dTt5UfoJsQ24aj1lzS2+yD4TkNzVeQylsOQBKf47tkM=
+github.com/precice/dumux-adapter v3.0.1-0.20260727083532-7bb2e8d05512+incompatible h1:xmYUqxEWIJ7EwEUivkFpUq5gmMKuPSgiVYRaa3XUiHI=
+github.com/precice/dumux-adapter v3.0.1-0.20260727083532-7bb2e8d05512+incompatible/go.mod h1:dTt5UfoJsQ24aj1lzS2+yD4TkNzVeQylsOQBKf47tkM=
 github.com/precice/dune-adapter v0.0.0-20260718211704-0723530a3f41 h1:t0lkIdVA7NULl9GkLCXWPiS3GF2UUOLsQ1pzhKLws7M=
 github.com/precice/dune-adapter v0.0.0-20260718211704-0723530a3f41/go.mod h1:drY/X4GgUF7tRGZ9+YpUHMh7CoMIz4IfAVWtUrgcMVM=
 github.com/precice/fenics-adapter v2.3.1-0.20260718211049-4cdb3b3ff04e+incompatible h1:DYAkuDXPvo6jsy1ROQnRxXB5UDSYASXi7Xay6p4FwZI=
@@ -16,8 +16,8 @@ github.com/precice/fenicsx-adapter v1.0.2-0.20260716165953-17d67792f781 h1:ySnRn
 github.com/precice/fenicsx-adapter v1.0.2-0.20260716165953-17d67792f781/go.mod h1:CRcbNaBGmyNdmCPs7mZCdRp7Y9WL6HnEYAJjrRbhC0s=
 github.com/precice/fmi-runner v0.2.2-0.20260718084031-4003d4b47035 h1:ZyOXvc2rEUHWscMuhjJLHmVDdeWY6WfVHB2RCRgM4pM=
 github.com/precice/fmi-runner v0.2.2-0.20260718084031-4003d4b47035/go.mod h1:EleqiAITx34dkfFst5qa7R3vEp3zv0+Z+LztNucPNXo=
-github.com/precice/micro-manager v0.11.2-0.20260724072804-a925ecb05518 h1:YI7yAGJEf0gLfHh1XFu+rbvCG8umWlTqVm7BDhdqv+M=
-github.com/precice/micro-manager v0.11.2-0.20260724072804-a925ecb05518/go.mod h1:cRbIdTJlfgVxeDIRT0jmbRULBC1eiqR43MdawB8Nazw=
+github.com/precice/micro-manager v0.11.2-0.20260727083507-453c84035ff6 h1:Sxi/tsbe5YeTypre+/XC6tqTcUu9FrCUcuPr2/d9XN4=
+github.com/precice/micro-manager v0.11.2-0.20260727083507-453c84035ff6/go.mod h1:cRbIdTJlfgVxeDIRT0jmbRULBC1eiqR43MdawB8Nazw=
 github.com/precice/openfoam-adapter v1.3.2-0.20260721103656-dcaa9b083780 h1:Nk6qtuqIAW1vj2HVwqs6U2Wxo86wFMBc8JtlfA4JAvI=
 github.com/precice/openfoam-adapter v1.3.2-0.20260721103656-dcaa9b083780/go.mod h1:VkhaDjB9nEvue1yw5V7PO4K21tPpkhI9jPiQ/dF+poo=
 github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe h1:vqFSYJSEksU2yu9muCaKF1/SL3RHK4GTvRB94plKNZY=
