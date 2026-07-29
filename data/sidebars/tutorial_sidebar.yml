@@ -68,10 +68,6 @@ entries:
           url: /tutorials-channel-transport-particles.html
           output: web, pdf
 
-    - title: Elastic tube 1D
-      url: /tutorials-elastic-tube-1d.html
-      output: web, pdf
-
     - title: Elastic tube 3D
       url: /tutorials-elastic-tube-3d.html
       output: web, pdf
@@ -105,20 +101,12 @@ entries:
       url: /tutorials-free-flow-over-porous-media.html
       output: web, pdf
 
-    - title: Heat exchanger
-      url: /tutorials-heat-exchanger.html
-      output: web, pdf
-
     - title: Heat exchanger simplified
       url: /tutorials-heat-exchanger-simplified.html
       output: web, pdf
 
     - title: Multiple perpendicular flaps
       url: /tutorials-multiple-perpendicular-flaps.html
-      output: web, pdf
-
-    - title: Oscillator
-      url: /tutorials-oscillator.html
       output: web, pdf
 
     - title: Oscillator overlap
