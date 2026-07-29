@@ -191,6 +191,14 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/channel-transport-reaction/images"
 
   [[imports.mounts]]
+  source = "elastic-tube-1d/README.md"
+  target = "content/tutorials/elastic-tube-1d/_index.md"
+
+  [[imports.mounts]]
+  source = "elastic-tube-1d/images"
+  target = "content/tutorials/elastic-tube-1d/images"
+
+  [[imports.mounts]]
   source = "elastic-tube-3d/README.md"
   target = "content/tutorials/elastic-tube-3d/_index.md"
 
@@ -247,6 +255,14 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/flow-over-heated-plate-two-meshes/images"
 
   [[imports.mounts]]
+  source = "heat-exchanger/README.md"
+  target = "content/tutorials/heat-exchanger/_index.md"
+
+  [[imports.mounts]]
+  source = "heat-exchanger/images"
+  target = "content/tutorials/heat-exchanger/images"
+
+  [[imports.mounts]]
   source = "heat-exchanger-simplified/README.md"
   target = "content/tutorials/heat-exchanger-simplified/_index.md"
 
@@ -261,6 +277,14 @@ path = "github.com/precice/tutorials"
   [[imports.mounts]]
   source = "multiple-perpendicular-flaps/images"
   target = "content/tutorials/multiple-perpendicular-flaps/images"
+
+  [[imports.mounts]]
+  source = "oscillator/README.md"
+  target = "content/tutorials/oscillator/_index.md"
+
+  [[imports.mounts]]
+  source = "oscillator/images"
+  target = "content/tutorials/oscillator/images"
 
   [[imports.mounts]]
   source = "oscillator-overlap/README.md"
