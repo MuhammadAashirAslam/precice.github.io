@@ -47,6 +47,9 @@ entries:
     folderitems:
 
 
+    - title: Aste turbine
+      url: /tutorials-aste-turbine.html
+      output: web, pdf
     - title: Breaking dam with flexible pillar 2D
       url: /tutorials-breaking-dam-2d.html
       output: web, pdf
@@ -67,6 +70,10 @@ entries:
         - title: Particles
           url: /tutorials-channel-transport-particles.html
           output: web, pdf
+
+    - title: Elastic tube 1d
+      url: /tutorials-elastic-tube-1d.html
+      output: web, pdf
 
     - title: Elastic tube 3D
       url: /tutorials-elastic-tube-3d.html
@@ -101,12 +108,20 @@ entries:
       url: /tutorials-free-flow-over-porous-media.html
       output: web, pdf
 
+    - title: Heat exchanger
+      url: /tutorials-heat-exchanger.html
+      output: web, pdf
+
     - title: Heat exchanger simplified
       url: /tutorials-heat-exchanger-simplified.html
       output: web, pdf
 
     - title: Multiple perpendicular flaps
       url: /tutorials-multiple-perpendicular-flaps.html
+      output: web, pdf
+
+    - title: Oscillator
+      url: /tutorials-oscillator.html
       output: web, pdf
 
     - title: Oscillator overlap
@@ -195,12 +210,12 @@ entries:
       url: /tutorials-resonant-circuit.html
       output: web, pdf
 
-    - title: Two-scale heat conduction
-      url: /tutorials-two-scale-heat-conduction.html
-      output: web, pdf
-
     - title: Turek-Hron FSI3
       url: /tutorials-turek-hron-fsi3.html
+      output: web, pdf
+
+    - title: Two-scale heat conduction
+      url: /tutorials-two-scale-heat-conduction.html
       output: web, pdf
 
     - title: Volume-coupled diffusion 
@@ -215,6 +230,3 @@ entries:
       url: /tutorials-wolf-sheep-soil-creep.html
       output: web, pdf
 
-    - title: Aste turbine
-      url: /tutorials-aste-turbine.html
-      output: web, pdf
