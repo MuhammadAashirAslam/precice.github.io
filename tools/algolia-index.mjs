@@ -10,7 +10,7 @@ const HEADING_SELECTOR = "h1,h2,h3,h4,h5,h6";
 const EXCLUDED_SELECTOR = "script,style,iframe";
 const CALLOUT_SELECTOR = ".alert,[role='alert']";
 
-// Keep the existing Jekyll Algolia ranking and highlighting contract.
+// Preserve the production Algolia ranking and highlighting contract.
 export const INDEX_SETTINGS = Object.freeze({
   searchableAttributes: [
     "title",

@@ -150,7 +150,7 @@ In the `README.md` file, following the general structure of the existing tutoria
 - Don't forget to adapt the `permalink:` field in the beginning of the file.
 
 {{< note >}}
-If you add a complete new tutorial case, the case also needs to be added to the [tutorials sidebar](https://github.com/precice/precice.github.io/blob/master/_data/sidebars/tutorial_sidebar.yml) on the [tutorials website section](tutorials.html). Please open a pull request to the [website repository](https://github.com/precice/precice.github.io).
+If you add a complete new tutorial case, the website's scheduled tutorial synchronization will generate its Hugo mount and sidebar entry. Check the resulting automated pull request and adjust the category when needed.
 {{< /note >}}
 
 ### The metadata file
@@ -217,14 +217,14 @@ We automate many checks with [GitHub actions](https://github.com/features/action
 
 ### Adding a new tutorial to the website
 
-The content of the tutorials is sourced from the develop branch of the tutorials repository, which is specified in the `.gitmodules` file of the website repository. Hence, in general, anything merged to develop in the tutorials appears on the website. Consider putting some `note` [alert box](docs-meta-cheatsheet.html#alerts) on top of your new tutorial page to describe any unreleased requirements.
+Tutorial content is imported from the tutorials repository with Hugo Modules. The website's module-update workflow follows the upstream default branch and records the selected commit in `go.mod`. Consider putting a `note` [alert box](docs-meta-cheatsheet.html#alerts) on top of your new tutorial page to describe any unreleased requirements.
 
-*New* tutorials will not directly appear on the website, but they need some additional steps. After merging to the tutorials develop, open a pull request with the following changes in the [website repository](https://github.com/precice/precice.github.io) ([example](https://github.com/precice/precice.github.io/pull/275)):
-
-1. Trigger the [update submodules workflow](https://github.com/precice/precice.github.io/actions/workflows/update-submodules.yml) and, after it completes, create a new branch and pull request (this may also happen automatically, or someone from the preCICE team may have to do it for you).
-2. Edit the [`_config.yml` file](https://github.com/precice/precice.github.io/blob/master/_config.yml) to append the directory name of your tutorial under `subprojects:`.
-3. Edit the [tutorials sidebar](https://github.com/precice/precice.github.io/blob/master/_data/sidebars/tutorial_sidebar.yml) to add your tutorial permalink (defined in the heading of the `README.md` you created) to a fitting place, next to a similar tutorial.
-4. Edit the [tutorials landing page](https://github.com/precice/precice.github.io/blob/master/content/tutorials/overview.md) to add your tutorial to the overview.
+New tutorials need a mount and a navigation entry. After merging the tutorial,
+run the **Sync tutorials** workflow in the
+[website repository](https://github.com/precice/precice.github.io). It opens an
+automated pull request that updates `config/_default/module.toml` and
+`data/sidebars/tutorial_sidebar.yml` together. Review its category placement
+and update the [tutorials landing page](https://github.com/precice/precice.github.io/blob/master/content/tutorials/overview.md) when needed.
 
 After your PR gets reviewed, approved, and merged, the website will be built automatically, and your tutorial will appear online in a couple of minutes.
 

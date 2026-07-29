@@ -5,4 +5,3 @@
   GO_VERSION = "1.26.3"
   HUGO_VERSION = "0.163.3"
   GOPROXY = "https://proxy.golang.org,direct"
-  GONOSUMDB = "github.com/precice/tutorials,github.com/precice/code_aster-adapter"

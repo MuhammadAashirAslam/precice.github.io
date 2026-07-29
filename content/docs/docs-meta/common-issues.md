@@ -1,28 +1,46 @@
 ---
-title: Troubleshooting and Common Issues
+title: Troubleshooting and common issues
 permalink: docs-meta-common-issues.html
 aliases:
   - /docs-meta-common-issues.html
-keywords: issues, troubleshooting, bugs, errors, warnings, documentation, jekyll, build locally
-summary:
+keywords: issues, troubleshooting, hugo, modules, build locally
+summary: "Solutions for common local Hugo and module build problems."
 ---
 
-## Jekyll error '429 Too Many Requests'
+## Hugo cannot download a module
 
-When building the site locally in frequent succession, Jekyll might complain in the following way:
+Run `hugo mod verify` and confirm that Go can reach the module source. A fresh
+clone needs network access the first time it downloads the versions recorded in
+`go.mod`.
+
+If an upstream repository rewrote a commit that was already published, the
+recorded checksum may no longer match. Do not disable checksum verification as
+a general workaround. Update the affected module to an immutable upstream
+commit and commit the resulting `go.mod` and `go.sum` changes.
+
+## Local content is older than upstream content
+
+Hugo builds imported documentation from the revisions pinned in `go.mod`, not
+from a separate local checkout. Run the **Update Hugo modules** workflow or:
 
 ```bash
- open-uri.rb:364:in `open_http': 429 Too Many Requests (OpenURI::HTTPError)
+python3 tools/sync_hugo_modules.py
 ```
 
-### Cause
+Review and commit the resulting `go.mod` and `go.sum` changes.
 
-In order to retrieve the current number of citations on Google Scholar, we use the `nokogiri` gem to scrape [http://scholar.google.com/scholar?hl=en&cites=5053469347483527186](http://scholar.google.com/scholar?hl=en&cites=5053469347483527186) and extract the number of citations (for more information see `_plugins/googlescholar.rb`). Frequent scraping attempts can hit Google's rate limit and lead to a soft IP ban.
+## Hugo cannot clean its cache
 
-### Solution
+The production command uses `--gc`, which requires a writable Hugo cache. Set a
+cache directory owned by your user when building inside a restricted container:
 
-Either visit [http://scholar.google.com](http://scholar.google.com) in your browser and solve the Captcha or deactivate the `googlescholar.rb` plugin temporarily, e.g. by renaming it to `googlescholar.rb_`, or commenting out its contents.
+```bash
+HUGO_CACHEDIR=/tmp/precice-hugo-cache hugo --gc --minify
+```
 
-## Jekyll crashes on Windows
+## Search results are stale
 
-Some of the flags (arguments) for running `jekyll build` or `jekyll serve` are known to crash on Windows, e.g. `--safe -l` or `--detach`. In most cases there is no workaround, because the features are simply not implemented or available in Windows, so run the command without the flag.
+Building Hugo only creates `public/algolia.json`; it does not upload records.
+Validate the export with `npm run algolia:index -- --dry-run`, then run the
+**Update the Algolia search index** workflow with the configured production
+credentials.

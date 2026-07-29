@@ -9,7 +9,7 @@ aliases:
 
 ## So you want to edit the landing page
 
-The preCICE documentation uses [Bootstrap 5.3.8](https://getbootstrap.com/docs/5.3/), based on [documentation-theme-jekyll](docs-meta-overview.html). The general idea is to adapt the layout and styling of the original theme as little as possible and style the landing page `index.html` relative to the original styling.
+The preCICE documentation uses [Bootstrap 5.3.8](https://getbootstrap.com/docs/5.3/) with Hugo templates. The landing page markup is in `layouts/index.html`, with its presentation kept consistent with the rest of the site.
 
 ## Style sheets
 

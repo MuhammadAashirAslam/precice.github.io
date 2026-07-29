@@ -5,42 +5,62 @@ on:
   schedule:
     - cron: "0 2 * * *"
 
+permissions:
+  contents: read
+
+concurrency:
+  group: update-algolia
+  cancel-in-progress: false
+
+env:
+  GO_VERSION: "1.26.3"
+  HUGO_VERSION: "0.163.3"
+  NODE_VERSION: "24.18.0"
+  GOPROXY: "https://proxy.golang.org,direct"
+
 jobs:
   index:
+    name: Build and publish index
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    timeout-minutes: 30
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
           submodules: false
           lfs: false
 
-      - name: Set up Hugo
-        uses: peaceiris/actions-hugo@v3
+      - name: Set up Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
-          hugo-version: "0.163.3"
+          go-version: ${{ env.GO_VERSION }}
+          cache-dependency-path: go.sum
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
 
       - name: Set up Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: "24.18.0"
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run Algolia CLI tests
+      - name: Test Algolia indexing
         run: npm run test:algolia
 
+      - name: Verify Hugo modules
+        run: hugo mod verify
+
       - name: Build Hugo Algolia export
-        env:
-          GOFLAGS: "-mod=mod"
-          GOPROXY: "https://proxy.golang.org,direct"
-          GONOSUMDB: "github.com/precice/tutorials,github.com/precice/code_aster-adapter"
-        run: hugo --gc --minify
+        run: hugo --gc --minify --cleanDestinationDir --environment production
 
       - name: Validate generated Algolia records
         run: npm run algolia:index -- --dry-run

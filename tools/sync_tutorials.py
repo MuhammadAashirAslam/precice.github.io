@@ -10,7 +10,7 @@ generates the Hugo Module mounts required to serve the tutorials, and safely
 appends any new tutorials to the Hugo website's sidebar navigation configuration.
 
 Usage:
-  python3 tools/sync_tutorials.py --module-toml config/_default/module/tutorials.toml --sidebar-yaml _data/sidebars/tutorial_sidebar.yml
+  python3 tools/sync_tutorials.py --module-toml config/_default/module.toml --sidebar-yaml data/sidebars/tutorial_sidebar.yml
 """
 
 import urllib.request

@@ -57,7 +57,7 @@ entries:
 
 ## Alerts
 
-[Link to documentation](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_alerts.html)
+[Hugo shortcode documentation](https://gohugo.io/content-management/shortcodes/)
 
 ```markdown
 {{</* note */>}}

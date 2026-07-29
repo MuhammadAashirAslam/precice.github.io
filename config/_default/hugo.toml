@@ -58,61 +58,6 @@ src = "https://cdn.jsdelivr.net/npm/mermaid@11.12.3/dist/mermaid.min.js"
 [security]
 allowContent = [".*"]
 
-[params.jekyll_defaults."content"]
-layout = "page"
-comments = false
-search = true
-sidebar = "home_sidebar"
-topnav = "topnav"
-
-[params.jekyll_defaults."content/docs"]
-layout = "page"
-comments = false
-search = true
-sidebar = "docs_sidebar"
-topnav = "topnav"
-toc = true
-
-[params.jekyll_defaults."content/tutorials"]
-layout = "page"
-comments = false
-search = true
-sidebar = "tutorial_sidebar"
-topnav = "topnav"
-toc = true
-
-[params.jekyll_defaults."content/community"]
-layout = "page"
-comments = false
-search = true
-sidebar = "community_sidebar"
-topnav = "topnav"
-toc = true
-
-[params.jekyll_defaults."imported/docs"]
-layout = "page"
-comments = false
-search = true
-sidebar = "docs_sidebar"
-topnav = "topnav"
-toc = true
-
-[params.jekyll_defaults."imported/tutorials"]
-layout = "page"
-comments = false
-search = true
-sidebar = "tutorial_sidebar"
-topnav = "topnav"
-toc = true
-
-[params.jekyll_defaults."imported/preeco-orga"]
-layout = "page"
-comments = false
-search = true
-sidebar = "community_sidebar"
-topnav = "topnav"
-toc = true
-
 [markup.goldmark.renderer]
 unsafe = true
 
