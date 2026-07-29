@@ -6,8 +6,8 @@ Automates the synchronization of tutorial metadata from the precice/tutorials
 repository into the precice.github.io Hugo website.
 
 This script fetches the latest `master` branch directory tree from GitHub, 
-generates the Hugo Module mounts required to serve the tutorials, and safely 
-appends any new tutorials to the Hugo website's sidebar navigation configuration.
+generates the Hugo Module mounts required to serve the tutorials, and keeps the
+Hugo website's top-level tutorial navigation alphabetized.
 
 Usage:
   python3 tools/sync_tutorials.py --module-toml config/_default/module.toml --sidebar-yaml data/sidebars/tutorial_sidebar.yml
@@ -139,22 +139,62 @@ def update_sidebar_yaml(yaml_path: str, tutorials: set[str]):
         
         if expected_url not in existing_urls:
             formatted_title = folder.replace("-", " ").capitalize()
-            # Generate the YAML block manually to preserve file formatting
-            block = f"\n    - title: {formatted_title}\n"
+            # Generate the YAML block manually to preserve the existing formatting.
+            block = f"    - title: {formatted_title}\n"
             block += f"      url: {expected_url}\n"
-            block += f"      output: web, pdf\n"
+            block += "      output: web, pdf\n\n"
             new_blocks.append(block)
             existing_urls.add(expected_url)
-            logging.info(f"Appended missing tutorial to sidebar: {formatted_title}")
+            logging.info(f"Queued missing tutorial for sidebar: {formatted_title}")
             
     if new_blocks:
         try:
-            with open(yaml_path, "a") as f:
-                for block in new_blocks:
-                    f.write(block)
-            logging.info(f"Updated {yaml_path} successfully by appending {len(new_blocks)} tutorials.")
+            with open(yaml_path, "r") as f:
+                lines = f.readlines()
+
+            all_tutorials_start = next(
+                (index for index, line in enumerate(lines)
+                 if line.rstrip() == "  - title: All tutorials"),
+                None,
+            )
+            if all_tutorials_start is None:
+                raise ValueError("Could not find the 'All tutorials' sidebar section")
+
+            section_end = next(
+                (index for index in range(all_tutorials_start + 1, len(lines))
+                 if lines[index].startswith("  - title: ")),
+                len(lines),
+            )
+            item_starts = [
+                index for index in range(all_tutorials_start + 1, section_end)
+                if lines[index].startswith("    - title: ")
+            ]
+            if not item_starts:
+                raise ValueError("The 'All tutorials' sidebar section has no tutorial items")
+
+            item_start = item_starts[0]
+            item_blocks = []
+            for position, start in enumerate(item_starts):
+                end = item_starts[position + 1] if position + 1 < len(item_starts) else section_end
+                block = "".join(lines[start:end])
+                title = block.splitlines()[0].removeprefix("    - title: ")
+                item_blocks.append((title.casefold(), block))
+
+            item_blocks.extend(
+                (block.splitlines()[0].removeprefix("    - title: ").casefold(), block)
+                for block in new_blocks
+            )
+            item_blocks.sort(key=lambda item: item[0])
+
+            sorted_items = "".join(block for _, block in item_blocks)
+            lines[item_start:section_end] = [sorted_items]
+            with open(yaml_path, "w") as f:
+                f.writelines(lines)
+            logging.info(
+                f"Updated {yaml_path} with {len(new_blocks)} alphabetized tutorial(s)."
+            )
         except Exception as e:
-            logging.error(f"Failed to append to sidebar yaml: {e}")
+            logging.error(f"Failed to update sidebar yaml: {e}")
             sys.exit(1)
     else:
         logging.info("No new tutorials found. Sidebar is already up-to-date.")

@@ -218,15 +218,3 @@ entries:
     - title: Aste turbine
       url: /tutorials-aste-turbine.html
       output: web, pdf
-
-    - title: Elastic tube 1d
-      url: /tutorials-elastic-tube-1d.html
-      output: web, pdf
-
-    - title: Heat exchanger
-      url: /tutorials-heat-exchanger.html
-      output: web, pdf
-
-    - title: Oscillator
-      url: /tutorials-oscillator.html
-      output: web, pdf
