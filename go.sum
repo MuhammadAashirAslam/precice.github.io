@@ -1,7 +1,7 @@
 github.com/precice/aste v3.3.1-0.20260710102503-4e32a4f942e0+incompatible h1:QA2eF30S8L9AKzBreYhB7udxuB821Zx63ZfG8swLinY=
 github.com/precice/aste v3.3.1-0.20260710102503-4e32a4f942e0+incompatible/go.mod h1:EAVXbGcuMa93PBPU0Fvhf1/I1jZWx65fyoXeWTAsMMM=
-github.com/precice/calculix-adapter v2.20.2-0.20260718205457-0ad32540f479+incompatible h1:PeV7KfPRcIcz7gPQy12R4p+nGCiGn/GPjxcmSqoqg7o=
-github.com/precice/calculix-adapter v2.20.2-0.20260718205457-0ad32540f479+incompatible/go.mod h1:/9lwEXili+aWDt0ffk34NI9uIQeC6kHurC8n4Eqnnf0=
+github.com/precice/calculix-adapter v2.20.2-0.20260730152547-ec9e5e179336+incompatible h1:oEADdDpoRTzuCzRjn2VBBrr+q5G1HNQlWmjbQZB7/uk=
+github.com/precice/calculix-adapter v2.20.2-0.20260730152547-ec9e5e179336+incompatible/go.mod h1:/9lwEXili+aWDt0ffk34NI9uIQeC6kHurC8n4Eqnnf0=
 github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9 h1:7mrhwlQx9rSMPFQ+aCfCbuelA3qhDWhrtuxkW5oWCfE=
 github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9/go.mod h1:9mtpaThVgf0DaN9ijNGupNaC6M3GRGJzBBCfFiluxhk=
 github.com/precice/dealii-adapter v0.0.0-20260718205912-55c1136200f5 h1:DA69FXg7pt12COo71+MEraCOHw0FAI7yQpYolWcC3ZM=

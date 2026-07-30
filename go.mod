@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/precice/aste v3.3.1-0.20260710102503-4e32a4f942e0+incompatible // indirect
-	github.com/precice/calculix-adapter v2.20.2-0.20260718205457-0ad32540f479+incompatible // indirect
+	github.com/precice/calculix-adapter v2.20.2-0.20260730152547-ec9e5e179336+incompatible // indirect
 	github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9 // indirect
 	github.com/precice/dealii-adapter v0.0.0-20260718205912-55c1136200f5 // indirect
 	github.com/precice/dumux-adapter v3.0.1-0.20260727083532-7bb2e8d05512+incompatible // indirect
