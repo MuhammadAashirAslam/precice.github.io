@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/precice/aste v3.3.1-0.20260710102503-4e32a4f942e0+incompatible // indirect
-	github.com/precice/calculix-adapter v2.20.2-0.20260803165901-6a538398f5f9+incompatible // indirect
+	github.com/precice/calculix-adapter v2.20.2-0.20260804180450-ff8a9bd4c0fe+incompatible // indirect
 	github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9 // indirect
 	github.com/precice/dealii-adapter v0.0.0-20260803170126-67ae059ade0d // indirect
 	github.com/precice/dumux-adapter v3.0.1-0.20260727083532-7bb2e8d05512+incompatible // indirect
@@ -16,5 +16,5 @@ require (
 	github.com/precice/openfoam-adapter v1.3.2-0.20260721103656-dcaa9b083780 // indirect
 	github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe // indirect
 	github.com/precice/su2-adapter v0.0.0-20260718101756-fde3106dab59 // indirect
-	github.com/precice/tutorials v202104.1.2-0.20260724170257-cd33e2dbacc5+incompatible // indirect
+	github.com/precice/tutorials v202104.1.2-0.20260804175454-83921fb34058+incompatible // indirect
 )

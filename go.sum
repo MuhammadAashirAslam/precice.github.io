@@ -1,7 +1,7 @@
 github.com/precice/aste v3.3.1-0.20260710102503-4e32a4f942e0+incompatible h1:QA2eF30S8L9AKzBreYhB7udxuB821Zx63ZfG8swLinY=
 github.com/precice/aste v3.3.1-0.20260710102503-4e32a4f942e0+incompatible/go.mod h1:EAVXbGcuMa93PBPU0Fvhf1/I1jZWx65fyoXeWTAsMMM=
-github.com/precice/calculix-adapter v2.20.2-0.20260803165901-6a538398f5f9+incompatible h1:ltwJe+Hg/0BLhNYhUY97ptk4QDoN87PQVE3ujQ+uTag=
-github.com/precice/calculix-adapter v2.20.2-0.20260803165901-6a538398f5f9+incompatible/go.mod h1:/9lwEXili+aWDt0ffk34NI9uIQeC6kHurC8n4Eqnnf0=
+github.com/precice/calculix-adapter v2.20.2-0.20260804180450-ff8a9bd4c0fe+incompatible h1:L6Ph0jmYkkj6USRFfp/q1k+Nwx9e23Kc+2izjosIAVc=
+github.com/precice/calculix-adapter v2.20.2-0.20260804180450-ff8a9bd4c0fe+incompatible/go.mod h1:/9lwEXili+aWDt0ffk34NI9uIQeC6kHurC8n4Eqnnf0=
 github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9 h1:7mrhwlQx9rSMPFQ+aCfCbuelA3qhDWhrtuxkW5oWCfE=
 github.com/precice/code_aster-adapter v0.0.0-20260709195159-6902b69ff0f9/go.mod h1:9mtpaThVgf0DaN9ijNGupNaC6M3GRGJzBBCfFiluxhk=
 github.com/precice/dealii-adapter v0.0.0-20260803170126-67ae059ade0d h1:pQYH2yIM1VCG2pLhjjOhHmsD2jtXSYuJzt8dU6Z+4oE=
@@ -24,5 +24,5 @@ github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe h1:vqFSYJSEksU
 github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe/go.mod h1:b+386uJGvHbRXqQArU0XswBG9gfoJ7hiszvbq2NYkUA=
 github.com/precice/su2-adapter v0.0.0-20260718101756-fde3106dab59 h1:7cOX7h49zur4oomae+1+P7jJpwsoXDtsDzB8AHDX10E=
 github.com/precice/su2-adapter v0.0.0-20260718101756-fde3106dab59/go.mod h1:62uO8/YUwX2R4w9RUlT/4fxWjKEwpEA312UYwvUaQbo=
-github.com/precice/tutorials v202104.1.2-0.20260724170257-cd33e2dbacc5+incompatible h1:q4CVJ1yce9mYyQgugGU6n3g400FrE+nRwTkER/A/9jM=
-github.com/precice/tutorials v202104.1.2-0.20260724170257-cd33e2dbacc5+incompatible/go.mod h1:zILvlNlwVxg3xyjkcc2eOA8H2Z14nuzxuR5e+ctDxuQ=
+github.com/precice/tutorials v202104.1.2-0.20260804175454-83921fb34058+incompatible h1:CkUK1b3L21n1yXpX0d4NP36l4T+9NvNWDam2oXN1gjo=
+github.com/precice/tutorials v202104.1.2-0.20260804175454-83921fb34058+incompatible/go.mod h1:zILvlNlwVxg3xyjkcc2eOA8H2Z14nuzxuR5e+ctDxuQ=
