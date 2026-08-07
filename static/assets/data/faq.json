@@ -1,6 +1,6 @@
 {
   "source": "preCICE Discourse (FAQ)",
-  "generated_at": "2026-08-06T08:43:06.989968",
+  "generated_at": "2026-08-07T07:21:43.839279",
   "topics": [
     {
       "id": 44,
@@ -21,7 +21,7 @@
       "url": "https://precice.discourse.group/t/can-precice-be-used-for-volume-coupling/27",
       "created_at": "2019-09-23T20:55:55.190Z",
       "last_posted_at": "2025-08-11T13:12:45.035Z",
-      "views": 3345,
+      "views": 3346,
       "posts_count": 9,
       "like_count": 2,
       "excerpt": "I read that you do surface coupling?\nDo you support volume coupling too?"
@@ -45,7 +45,7 @@
       "url": "https://precice.discourse.group/t/can-precice-be-used-with-moving-meshes/53",
       "created_at": "2019-10-14T12:30:50.463Z",
       "last_posted_at": "2024-06-06T02:01:13.798Z",
-      "views": 1707,
+      "views": 1708,
       "posts_count": 29,
       "like_count": 7,
       "excerpt": "What happens when the interface is moving?"
@@ -117,7 +117,7 @@
       "url": "https://precice.discourse.group/t/how-to-debug-the-openfoam-adapter/815",
       "created_at": "2021-12-02T14:38:34.182Z",
       "last_posted_at": "2021-12-08T17:37:49.386Z",
-      "views": 1309,
+      "views": 1310,
       "posts_count": 7,
       "like_count": 6,
       "excerpt": "Hello preCICE community,\nI am opening this topic in the hopes of following:\n\nIt works as guidance for future developers working on OF adapters\nGetting help on debugging OpenFOAM adapter or OF related things\n\nMy System:\nKubuntu 20.04 LTS\npreCICE v2.3.\u2026"
@@ -141,7 +141,7 @@
       "url": "https://precice.discourse.group/t/help-the-participants-are-not-finding-each-other/646",
       "created_at": "2021-06-30T19:58:06.063Z",
       "last_posted_at": "2021-06-30T19:59:41.278Z",
-      "views": 2517,
+      "views": 2518,
       "posts_count": 3,
       "like_count": 1,
       "excerpt": "A possible situation, without an error: one or both/multiple participants display the message\nSetting up master communication to coupling partner/s\n\nand nothing happens, even though this step should complete instantaneously."
@@ -153,7 +153,7 @@
       "url": "https://precice.discourse.group/t/3d-1d-coupling/388",
       "created_at": "2020-11-13T07:39:48.596Z",
       "last_posted_at": "2020-11-13T08:51:54.069Z",
-      "views": 1735,
+      "views": 1736,
       "posts_count": 3,
       "like_count": 1,
       "excerpt": "Hi!\nis there a way to couple a 1D simulation (OpenModelica) with a 3D simulation (OpenFoam)?\nthx"
