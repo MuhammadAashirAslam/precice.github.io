@@ -16,8 +16,8 @@ github.com/precice/fenicsx-adapter v1.0.2-0.20260716165953-17d67792f781 h1:ySnRn
 github.com/precice/fenicsx-adapter v1.0.2-0.20260716165953-17d67792f781/go.mod h1:CRcbNaBGmyNdmCPs7mZCdRp7Y9WL6HnEYAJjrRbhC0s=
 github.com/precice/fmi-runner v0.2.2-0.20260718084031-4003d4b47035 h1:ZyOXvc2rEUHWscMuhjJLHmVDdeWY6WfVHB2RCRgM4pM=
 github.com/precice/fmi-runner v0.2.2-0.20260718084031-4003d4b47035/go.mod h1:EleqiAITx34dkfFst5qa7R3vEp3zv0+Z+LztNucPNXo=
-github.com/precice/micro-manager v0.11.2-0.20260727083507-453c84035ff6 h1:Sxi/tsbe5YeTypre+/XC6tqTcUu9FrCUcuPr2/d9XN4=
-github.com/precice/micro-manager v0.11.2-0.20260727083507-453c84035ff6/go.mod h1:cRbIdTJlfgVxeDIRT0jmbRULBC1eiqR43MdawB8Nazw=
+github.com/precice/micro-manager v0.11.2 h1:XW3XPOgYSZAlRS6LtfYR3nXHQ3TqQ3iU/9rDsMZ72PE=
+github.com/precice/micro-manager v0.11.2/go.mod h1:cRbIdTJlfgVxeDIRT0jmbRULBC1eiqR43MdawB8Nazw=
 github.com/precice/openfoam-adapter v1.3.2-0.20260805151646-5a9eec4548ce h1:AVyoMiQh7ycVeJShCBzYTA/n1zJuS7A7AwpMzOk2GDc=
 github.com/precice/openfoam-adapter v1.3.2-0.20260805151646-5a9eec4548ce/go.mod h1:VkhaDjB9nEvue1yw5V7PO4K21tPpkhI9jPiQ/dF+poo=
 github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe h1:vqFSYJSEksU2yu9muCaKF1/SL3RHK4GTvRB94plKNZY=

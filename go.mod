@@ -12,7 +12,7 @@ require (
 	github.com/precice/fenics-adapter v2.3.1-0.20260803194841-4615720762f4+incompatible // indirect
 	github.com/precice/fenicsx-adapter v1.0.2-0.20260716165953-17d67792f781 // indirect
 	github.com/precice/fmi-runner v0.2.2-0.20260718084031-4003d4b47035 // indirect
-	github.com/precice/micro-manager v0.11.2-0.20260727083507-453c84035ff6 // indirect
+	github.com/precice/micro-manager v0.11.2 // indirect
 	github.com/precice/openfoam-adapter v1.3.2-0.20260805151646-5a9eec4548ce // indirect
 	github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe // indirect
 	github.com/precice/su2-adapter v0.0.0-20260718101756-fde3106dab59 // indirect
