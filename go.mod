@@ -16,5 +16,5 @@ require (
 	github.com/precice/openfoam-adapter v1.3.2-0.20260805151646-5a9eec4548ce // indirect
 	github.com/precice/preeco-orga v0.0.0-20260718211338-7b68152ffffe // indirect
 	github.com/precice/su2-adapter v0.0.0-20260718101756-fde3106dab59 // indirect
-	github.com/precice/tutorials v202104.1.2-0.20260805083843-a4b79f538087+incompatible // indirect
+	github.com/precice/tutorials v202104.1.2-0.20260809191742-be6669b06d47+incompatible // indirect
 )
