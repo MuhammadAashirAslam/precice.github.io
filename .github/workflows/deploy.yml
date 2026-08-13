@@ -14,11 +14,11 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  BASE_URL: "https://precice.org/"
   GO_VERSION: "1.26.3"
   HUGO_VERSION: "0.163.3"
   DOXYGEN_VERSION: "1.14.0"
   DOXYGEN_SHA256: "e5d6ae24d0bf3f0cdc4d8f146726b89ca323922f19441af99b1872d503665ad6"
-  GOPROXY: "https://proxy.golang.org,direct"
 
 jobs:
   pre-commit:
@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: website
-          fetch-depth: 0
+          fetch-depth: 0 # full history required to determine last edit
           submodules: false
           lfs: false
 
@@ -92,6 +92,8 @@ jobs:
 
       - name: Patch Doxygen configuration
         run: ./website/doxygen/patch.sh
+        env:
+          DOXYGEN_BASE_URL: "https://precice.org/doxygen"
 
       - name: Install Doxygen dependencies
         run: |
@@ -120,7 +122,7 @@ jobs:
 
       - name: Build Hugo site
         working-directory: website
-        run: hugo --gc --minify --cleanDestinationDir --environment production
+        run: hugo --gc --minify --cleanDestinationDir --environment production --baseURL "${BASE_URL}"
 
       - name: Build Doxygen for develop
         working-directory: develop
@@ -147,9 +149,11 @@ jobs:
           test -s website/public/feed.xml
           test -s website/public/sitemap.xml
           test -s website/public/sitemap_index.xml
+          test -s website/public/robots.txt
           test -s website/public/doxygen/develop/index.html
           test -s website/public/doxygen/main/index.html
           test -s website/public/doxygen/main/sitemap.xml
+          grep -Fx 'Sitemap: https://precice.org/sitemap_index.xml' website/public/robots.txt
           xmllint --noout \
             website/public/feed.xml \
             website/public/sitemap.xml \
