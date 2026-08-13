@@ -14,18 +14,6 @@
   <a href="{{ . | safeURL }}">Click here if you are not redirected.</a>
 </body>
 {{- else }}
-{{- if eq (site.Params.output | default "web") "pdf" }}
-<head>
-  {{ partial "head_print.html" . }}
-</head>
-<body class="{{ with .Params.type }}{{ . }} {{ end }}print">
-  <div class="container print-container">
-    <main class="print-content">
-      {{ block "main" . }}{{ end }}
-    </main>
-  </div>
-</body>
-{{- else }}
 <head>
   {{ partial "head.html" . }}
 </head>
@@ -62,7 +50,6 @@
 
   {{ partial "footer.html" . }}
   {{ partial "scroll_to_top.html" . }}
-  {{ partial "google_analytics.html" . }}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="{{ "js/customscripts.js" | relURL }}"></script>
@@ -89,6 +76,5 @@
     });
   </script>
 </body>
-{{- end }}
 {{- end }}
 </html>
