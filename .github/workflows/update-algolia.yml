@@ -72,8 +72,4 @@ jobs:
           ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           ALGOLIA_INDEX_NAME: ${{ env.ALGOLIA_INDEX_NAME }}
-<<<<<<< HEAD
-        run: npm run algolia:index
-=======
         run: npm run algolia:index -- --max-record-size 10000
->>>>>>> 0b439cb6a4 (Running Algolia workflow on my fork)
