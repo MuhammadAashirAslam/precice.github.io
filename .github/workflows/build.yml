@@ -90,7 +90,7 @@ jobs:
         run: hugo --gc --minify --cleanDestinationDir --environment production
 
       - name: Validate Algolia records
-        run: npm run algolia:index -- --dry-run
+        run: npm run algolia:index -- --dry-run --max-record-size 10000
 
       - name: Install XML validation tools
         run: sudo apt-get update && sudo apt-get install --yes libxml2-utils
