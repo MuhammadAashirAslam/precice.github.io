@@ -54,7 +54,7 @@ jobs:
 
       - name: Build Hugo site
         run: >-
-          hugo --gc --minify --cleanDestinationDir --environment production
+          hugo --gc --minify --cleanDestinationDir --environment preview
           --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload Pages artifact

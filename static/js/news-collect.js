@@ -1,3 +1,6 @@
+// Resolve data from the site root even when the site is served from a subpath.
+const siteRoot = new URL("../", document.currentScript.src);
+
 document.addEventListener("DOMContentLoaded", async function () {
   const newsContainer = document.getElementById("news-container");
   const loadingText = document.getElementById("loading-news");
@@ -12,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   try {
-    const response = await fetch("/assets/data/news.json");
+    const response = await fetch(new URL("assets/data/news.json", siteRoot));
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     let topics = data.topics || [];

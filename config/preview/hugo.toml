@@ -1,0 +1,3 @@
+# Configuration used only by the temporary GitHub Pages preview.
+baseURL = "https://precice.github.io/website-testing/"
+relativeURLs = true
