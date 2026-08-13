@@ -16,7 +16,8 @@ env:
   GO_VERSION: "1.26.3"
   HUGO_VERSION: "0.163.3"
   NODE_VERSION: "24.18.0"
-  GOPROXY: "https://proxy.golang.org,direct"
+  ALGOLIA_APP_ID: "LIT6P0EW26"
+  ALGOLIA_INDEX_NAME: "hugo"
 
 jobs:
   index:
@@ -67,7 +68,7 @@ jobs:
 
       - name: Replace Algolia records
         env:
-          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-          ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_WRITE_API_KEY }}
-          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
+          ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_INDEX_NAME: ${{ env.ALGOLIA_INDEX_NAME }}
         run: npm run algolia:index
