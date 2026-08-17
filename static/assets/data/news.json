@@ -9,7 +9,7 @@
       "last_posted_at": "2020-07-19T20:56:04.638Z",
       "like_count": 0,
       "posts_count": 2,
-      "views": 770,
+      "views": 825,
       "description": "News, announcements, \u201cblog\u201d-like posts..."
     },
     {
@@ -45,7 +45,7 @@
       "last_posted_at": "2026-06-10T13:52:01.172Z",
       "like_count": 1,
       "posts_count": 3,
-      "views": 210,
+      "views": 265,
       "description": "Besides the preCICE Workshops (with the next one expected in March 2027), we regularly organize preCICE sessions in larger conferences. The WCCM 2026 conference will take place in Munich, Germany,..."
     },
     {
@@ -57,7 +57,7 @@
       "last_posted_at": "2026-04-23T10:59:00.361Z",
       "like_count": 9,
       "posts_count": 1,
-      "views": 180,
+      "views": 240,
       "description": "Summary: With preCICE v3.4, we pushed features on several fronts. We made quasi-Newton acceleration bounds-aware as a first step toward fully supporting bounded coupling variables, such as density or volume..."
     },
     {
@@ -189,7 +189,7 @@
       "last_posted_at": "2025-04-02T13:13:39.707Z",
       "like_count": 3,
       "posts_count": 1,
-      "views": 200,
+      "views": 264,
       "description": "Summary: Important long-term features see great progress with the new release preCICE release v3.2, such as different options to handle dynamic meshes. Other features were finally wrapped up and integrated,..."
     },
     {
