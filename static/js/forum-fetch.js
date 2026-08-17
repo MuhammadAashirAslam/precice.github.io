@@ -111,8 +111,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           new Date(t.last_posted_at).toLocaleDateString("en-GB") +
           " | Replies: " +
           t.posts_count +
-          " | Views: " +
-          t.views;
+          (t.views !== undefined && t.views !== null ? " | Views: " + t.views : "");
 
         card.appendChild(h4);
         card.appendChild(excerptP);

@@ -3,10 +3,10 @@ import os
 import json
 import re
 import urllib.request
-from datetime import datetime
 
 DISCOURSE_BASE = "https://precice.discourse.group"
 OUTPUT_FILE = "./static/assets/data/faq.json"
+VIEW_THRESHOLD = 50
 
 
 def http_get_json(url: str):
@@ -17,6 +17,17 @@ def http_get_json(url: str):
 
 def strip_html(text: str) -> str:
     return re.sub(r"<[^>]+>", "", text)
+
+
+def load_existing_topics() -> dict:
+    if not os.path.exists(OUTPUT_FILE):
+        return {}
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return {t["id"]: t for t in data.get("topics", []) if "id" in t}
+    except Exception:
+        return {}
 
 
 def fetch_excerpt(topic_id: int) -> str:
@@ -38,17 +49,29 @@ def fetch_faq():
         topic_list = data.get("topic_list", {}).get("topics", [])
         print(f"Found {len(topic_list)} FAQ topics. Fetching excerpts...")
 
+        existing_topics = load_existing_topics()
         topics = []
         for t in topic_list:
-            excerpt = fetch_excerpt(t["id"])
+            topic_id = t["id"]
+            new_views = t.get("views", 0) or 0
+            if topic_id in existing_topics:
+                old_views = existing_topics[topic_id].get("views", 0) or 0
+                if abs(new_views - old_views) < VIEW_THRESHOLD:
+                    views = old_views
+                else:
+                    views = new_views
+            else:
+                views = new_views
+
+            excerpt = fetch_excerpt(topic_id)
             topics.append({
-                "id": t["id"],
+                "id": topic_id,
                 "title": t["title"],
                 "slug": t["slug"],
-                "url": f"{DISCOURSE_BASE}/t/{t['slug']}/{t['id']}",
+                "url": f"{DISCOURSE_BASE}/t/{t['slug']}/{topic_id}",
                 "created_at": t.get("created_at"),
                 "last_posted_at": t.get("last_posted_at"),
-                "views": t.get("views"),
+                "views": views,
                 "posts_count": t.get("posts_count"),
                 "like_count": t.get("like_count"),
                 "excerpt": excerpt,
@@ -56,7 +79,6 @@ def fetch_faq():
 
         payload = {
             "source": "preCICE Discourse (FAQ)",
-            "generated_at": datetime.utcnow().isoformat(),
             "topics": topics,
         }
 
