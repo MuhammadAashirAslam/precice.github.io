@@ -150,7 +150,7 @@ In the `README.md` file, following the general structure of the existing tutoria
 - Don't forget to adapt the `permalink:` field in the beginning of the file.
 
 {{< note >}}
-If you add a complete new tutorial case, the website's scheduled tutorial synchronization will generate its Hugo mount and sidebar entry. Check the resulting automated pull request and adjust the category when needed.
+If you add a complete new tutorial case, also add its Hugo module mounts to `config/_default/module.toml` and its permalink to the [tutorials sidebar](https://github.com/precice/precice.github.io/blob/master/data/sidebars/tutorials_sidebar.yml) in a pull request to the [website repository](https://github.com/precice/precice.github.io).
 {{< /note >}}
 
 ### The metadata file
@@ -193,7 +193,6 @@ After testing and merging, we will generate the reference results of the new tes
 - Mesh names start with the participant/domain name, e.g. `Fluid-Mesh`.
 - Mesh names of participants with multiple interfaces contain the interface in the mesh name, e.g. `Fluid-Upstream-Mesh`. For meshes on which it is important to distinguish between face centers and face nodes, the modifier comes at the end, e.g. `Fluid-Upstream-Mesh-Centers`.
 - Watchpoint names should be describing the point, not be a generic name.
-- Images need to be named as `tutorials-<tutorial>-<image>.png` to be correctly displayed on the website. You can then refer to them as `![title](/images/tutorials-<tutorial>-<image>.png)`. Subdirectories are not allowed.
 
 ### Open a pull request
 
@@ -217,14 +216,20 @@ We automate many checks with [GitHub actions](https://github.com/features/action
 
 ### Adding a new tutorial to the website
 
-Tutorial content is imported from the tutorials repository with Hugo Modules. The website's module-update workflow follows the upstream default branch and records the selected commit in `go.mod`. Consider putting a `note` [alert box](docs-meta-cheatsheet.html#alerts) on top of your new tutorial page to describe any unreleased requirements.
+Tutorial content is imported from the tutorials repository with Hugo Modules.
+The `Update Hugo modules` workflow records the selected tutorial revision in
+`go.mod` and `go.sum`. Consider putting a `note`
+[alert box](docs-meta-cheatsheet.html#alerts) on top of your new tutorial page
+to describe any unreleased requirements.
 
-New tutorials need a mount and a navigation entry. After merging the tutorial,
-run the **Sync tutorials** workflow in the
-[website repository](https://github.com/precice/precice.github.io). It opens an
-automated pull request that updates `config/_default/module.toml` and
-`data/sidebars/tutorial_sidebar.yml` together. Review its category placement
-and update the [tutorials landing page](https://github.com/precice/precice.github.io/blob/master/content/tutorials/overview.md) when needed.
+New tutorials will not directly appear on the website. After merging a new
+tutorial, open a pull request with these changes in the
+[website repository](https://github.com/precice/precice.github.io):
+
+1. Add the tutorial's Hugo module mounts to `config/_default/module.toml`.
+2. Add its permalink to a fitting place in the
+   [tutorials sidebar](https://github.com/precice/precice.github.io/blob/master/data/sidebars/tutorials_sidebar.yml), next to a similar tutorial.
+3. Edit the [tutorials landing page](https://github.com/precice/precice.github.io/blob/master/content/tutorials/overview.md) to add the tutorial to the overview.
 
 After your PR gets reviewed, approved, and merged, the website will be built automatically, and your tutorial will appear online in a couple of minutes.
 

@@ -334,10 +334,6 @@ entries:
           url: /adapter-calculix-support.html
           output: web, pdf
 
-        - title: CalculiX support
-          url: /adapter-calculix-support.html
-          output: web, pdf
-
       - title: code_aster
         output: web, pdf
         subfolderitems:
@@ -696,4 +692,5 @@ entries:
     - title: Migration guide
       url: /docs-meta-migration-guide.html
       output: web
+
 

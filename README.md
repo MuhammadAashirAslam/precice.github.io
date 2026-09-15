@@ -1,10 +1,6 @@
 # preCICE website - [precice.org](https://precice.org/)
 
-## Local development
-
-First install [pre-commit](https://pre-commit.com/) using its
-[installation instructions](https://pre-commit.com/#install) to keep commits
-clean.
+## Building the website locally
 
 The website uses the [Hugo](https://gohugo.io/) static site generator and
 [GitHub Pages](https://pages.github.com/). Install Hugo Extended and Go using
@@ -20,21 +16,49 @@ After installation, check the tools before building:
 ```bash
 hugo version
 go version
-pre-commit --version
 ```
+
+Clone the repository and start the local development server:
 
 ```bash
 git clone https://github.com/precice/precice.github.io.git
 cd precice.github.io
-pre-commit install
 hugo server
 ```
 
 You can now view the website locally at <http://localhost:1313/>. On the first
-build, Hugo downloads the module versions recorded in `go.mod`. No Ruby or Git
-submodule setup is required.
+build, Hugo automatically downloads the module versions recorded in `go.mod`.
 
-Before opening a pull request, run the production build:
+## Build inside a Docker container
+
+Instead of building on your system (which requires some setup the first time), you can directly serve the website from a Docker container (using the [official Hugo image](https://github.com/gohugoio/hugo/pkgs/container/hugo) - [Dockerfile](https://github.com/gohugoio/hugo/blob/master/Dockerfile)). In this directory, run the following:
+
+```shell
+docker run --rm --volume="$PWD:/project:Z" -p 1313:1313 -it ghcr.io/gohugoio/hugo:latest serve  --bind 0.0.0.0
+```
+
+Arguments:
+
+- `docker run`: The Docker command to run a container from an existing image
+- `--rm`: Automatically remove (or not) the container when it exists
+- `--volume`: Mount the current directory (`$PWD`) to a directory in the container (`/project/`), so that only the current container can see the content (`:Z`)
+- `--publish`: Publish the container's port 1313 (where Hugo serves the website) to the host port 1313
+- `-it`: Interactive container, capturing signals (such as `Ctrl-C`)
+- `ghcr.io/gohugoio/hugo:latest`: The image. If `latest` fails, v0.166.0 is known to work.
+- `serve`: The Hugo command to run
+- `--bind 0.0.0.0`: Bind all network addresses to the 0.0.0.0 interface (important to access the website from the host).
+
+## Contributing
+
+First install [pre-commit](https://pre-commit.com/) using its
+[installation instructions](https://pre-commit.com/#install) to keep commits
+clean:
+
+```bash
+pre-commit install
+```
+
+Before opening a pull request, run the production build and verify that all checks pass:
 
 ```bash
 hugo mod verify
@@ -59,29 +83,18 @@ downloaded module files from this repository; make documentation changes in the
 repository that owns them.
 
 Adding a new imported project requires an import and mounts in
-`config/_default/module.toml`, an edit-link mapping in the Hugo configuration,
-and a navigation entry where appropriate. Adding a tutorial currently also
-requires an entry in `data/sidebars/tutorial_sidebar.yml`.
-
-## Search
-
-Hugo writes the search export to `public/algolia.json`. Validate the generated
-records without uploading them with:
-
-```bash
-npm ci
-npm run test:algolia
-hugo --gc --minify --cleanDestinationDir --environment production
-npm run algolia:index -- --dry-run
-```
-
-See [the search documentation](docs/algolia.md) for test-index and credential
-setup.
+`config/_default/module.toml`, an edit-link mapping in
+`config/_default/params.toml`, and a navigation entry where appropriate. Adding
+a tutorial currently also requires an entry in
+`data/sidebars/tutorials_sidebar.yml`.
 
 ## Further information
 
-The [documentation of the documentation pages](https://precice.org/docs-meta-overview.html)
+The [documentation of the documentation pages](content/docs/docs-meta/overview.md)
+(or on the [website](https://precice.org/docs-meta-overview.html))
 explains the website structure, navigation, front matter, and imported content.
+See the [search documentation](content/docs/docs-meta/search.md) for details on
+Algolia search indexing and configuration.
 
 ## Changing the news banner
 
@@ -92,18 +105,8 @@ link, and choose whether it appears on the landing page or on other pages.
 ## Common issues while building the site
 
 - If Hugo cannot download a module, first check that Git and Go are installed,
-  then run `hugo mod verify`. A fresh clone needs network access to download the
-  versions recorded in `go.mod`.
-- If Hugo reports a checksum mismatch, do not disable verification. The upstream
-  source or selected revision has changed; update the module through the normal
-  synchronization process and review the resulting `go.mod` and `go.sum` files.
-- If a container or restricted environment cannot clean Hugo's cache, build
-  with a writable cache directory, for example
-  `HUGO_CACHEDIR=/tmp/precice-hugo-cache hugo --gc --minify`.
-- If search results are stale, remember that a Hugo build only writes
-  `public/algolia.json`; the Algolia indexing workflow or CLI must upload it.
-
-For further information, see [common issues](https://precice.org/docs-meta-common-issues.html).
+  then run `hugo mod verify`. A fresh clone needs network access to download the hugo modules.
+For further information, see [common issues](content/docs/docs-meta/common-issues.md).
 
 ## Licenses
 

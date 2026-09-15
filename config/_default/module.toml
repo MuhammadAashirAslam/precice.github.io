@@ -23,22 +23,18 @@ path = "github.com/precice/code_aster-adapter"
   source = "docs/images"
   target = "content/docs/adapters/code_aster/images"
 
-  [[imports.mounts]]
-  source = "docs/thesis-excerpt-cheung.pdf"
-  target = "content/docs/adapters/code_aster/thesis-excerpt-cheung.pdf"
-
 # deal.II adapter
 [[imports]]
 path = "github.com/precice/dealii-adapter"
 
   [[imports.mounts]]
-  source = "docs/adapter-dealii-overview.md"
+  source = "docs/overview.md"
   target = "content/docs/adapters/dealii/_index.md"
 
   [[imports.mounts]]
   source = "docs"
   target = "content/docs/adapters/dealii"
-  files = ["! adapter-dealii-overview.md"]
+  files = ["! overview.md"]
 
 # DuMuX adapter
 [[imports]]
@@ -183,6 +179,14 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/channel-transport/images"
 
   [[imports.mounts]]
+  source = "channel-transport-particles/README.md"
+  target = "content/tutorials/channel-transport-particles/_index.md"
+
+  [[imports.mounts]]
+  source = "channel-transport-particles/images"
+  target = "content/tutorials/channel-transport-particles/images"
+
+  [[imports.mounts]]
   source = "channel-transport-reaction/README.md"
   target = "content/tutorials/channel-transport-reaction/_index.md"
 
@@ -255,6 +259,14 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/flow-over-heated-plate-two-meshes/images"
 
   [[imports.mounts]]
+  source = "free-flow-over-porous-media/README.md"
+  target = "content/tutorials/free-flow-over-porous-media/_index.md"
+
+  [[imports.mounts]]
+  source = "free-flow-over-porous-media/images"
+  target = "content/tutorials/free-flow-over-porous-media/images"
+
+  [[imports.mounts]]
   source = "heat-exchanger/README.md"
   target = "content/tutorials/heat-exchanger/_index.md"
 
@@ -303,6 +315,14 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/partitioned-backwards-facing-step/images"
 
   [[imports.mounts]]
+  source = "partitioned-burgers-1d/README.md"
+  target = "content/tutorials/partitioned-burgers-1d/_index.md"
+
+  [[imports.mounts]]
+  source = "partitioned-burgers-1d/images"
+  target = "content/tutorials/partitioned-burgers-1d/images"
+
+  [[imports.mounts]]
   source = "partitioned-elastic-beam/README.md"
   target = "content/tutorials/partitioned-elastic-beam/_index.md"
 
@@ -317,6 +337,14 @@ path = "github.com/precice/tutorials"
   [[imports.mounts]]
   source = "partitioned-heat-conduction/images"
   target = "content/tutorials/partitioned-heat-conduction/images"
+
+  [[imports.mounts]]
+  source = "partitioned-heat-conduction-3d/README.md"
+  target = "content/tutorials/partitioned-heat-conduction-3d/_index.md"
+
+  [[imports.mounts]]
+  source = "partitioned-heat-conduction-3d/images"
+  target = "content/tutorials/partitioned-heat-conduction-3d/images"
 
   [[imports.mounts]]
   source = "partitioned-heat-conduction-complex/README.md"
@@ -351,6 +379,14 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/partitioned-pipe/images"
 
   [[imports.mounts]]
+  source = "partitioned-pipe-multiscale/README.md"
+  target = "content/tutorials/partitioned-pipe-multiscale/_index.md"
+
+  [[imports.mounts]]
+  source = "partitioned-pipe-multiscale/images"
+  target = "content/tutorials/partitioned-pipe-multiscale/images"
+
+  [[imports.mounts]]
   source = "partitioned-pipe-two-phase/README.md"
   target = "content/tutorials/partitioned-pipe-two-phase/_index.md"
 
@@ -367,12 +403,28 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/perpendicular-flap/images"
 
   [[imports.mounts]]
+  source = "perpendicular-flap-stress/README.md"
+  target = "content/tutorials/perpendicular-flap-stress/_index.md"
+
+  [[imports.mounts]]
+  source = "perpendicular-flap-stress/images"
+  target = "content/tutorials/perpendicular-flap-stress/images"
+
+  [[imports.mounts]]
   source = "quickstart/README.md"
   target = "content/tutorials/quickstart/_index.md"
 
   [[imports.mounts]]
   source = "quickstart/images"
   target = "content/tutorials/quickstart/images"
+
+  [[imports.mounts]]
+  source = "resonant-circuit/README.md"
+  target = "content/tutorials/resonant-circuit/_index.md"
+
+  [[imports.mounts]]
+  source = "resonant-circuit/images"
+  target = "content/tutorials/resonant-circuit/images"
 
   [[imports.mounts]]
   source = "turek-hron-fsi3/README.md"
@@ -407,5 +459,21 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/volume-coupled-flow/images"
 
   [[imports.mounts]]
-  source = "tools/tests/README.md"
+  source = "water-hammer/README.md"
+  target = "content/tutorials/water-hammer/_index.md"
+
+  [[imports.mounts]]
+  source = "water-hammer/images"
+  target = "content/tutorials/water-hammer/images"
+
+  [[imports.mounts]]
+  source = "wolf-sheep-soil-creep/README.md"
+  target = "content/tutorials/wolf-sheep-soil-creep/_index.md"
+
+  [[imports.mounts]]
+  source = "wolf-sheep-soil-creep/images"
+  target = "content/tutorials/wolf-sheep-soil-creep/images"
+
+  [[imports.mounts]]
+  source = "tests/README.md"
   target = "content/docs/dev-docs/system-tests/_index.md"

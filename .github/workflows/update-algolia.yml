@@ -13,12 +13,11 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  GO_VERSION: "1.26.3"
-  HUGO_VERSION: "0.163.3"
+  GO_VERSION: "1.27.1"
+  HUGO_VERSION: "0.166.0"
   NODE_VERSION: "24.18.0"
-  GOPROXY: "https://proxy.golang.org,direct"
-  ALGOLIA_APP_ID: "NFZUWQ3TD8"
-  ALGOLIA_INDEX_NAME: "precice-hugo-test"
+  ALGOLIA_APP_ID: "LIT6P0EW26"
+  ALGOLIA_INDEX_NAME: "hugo"
 
 jobs:
   index:
@@ -51,12 +50,15 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
+          cache-dependency-path: tools/package-lock.json
 
       - name: Install Node.js dependencies
         run: npm ci
+        working-directory: tools
 
       - name: Test Algolia indexing
         run: npm run test:algolia
+        working-directory: tools
 
       - name: Verify Hugo modules
         run: hugo mod verify
@@ -65,11 +67,13 @@ jobs:
         run: hugo --gc --minify --cleanDestinationDir --environment production
 
       - name: Validate generated Algolia records
-        run: npm run algolia:index -- --dry-run --max-record-size 10000
+        run: npm run algolia:index -- --dry-run
+        working-directory: tools
 
       - name: Replace Algolia records
         env:
           ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           ALGOLIA_INDEX_NAME: ${{ env.ALGOLIA_INDEX_NAME }}
-        run: npm run algolia:index -- --max-record-size 10000
+        run: npm run algolia:index
+        working-directory: tools

@@ -44,9 +44,9 @@ hugo --gc --minify --cleanDestinationDir --environment production
 
 The two main ingredients behind the website are:
 
-1. **The sidebar**, the navigation tree. The sidebar partial renders the YAML
+1. **The sidebar:** the navigation tree. The sidebar partial renders the YAML
    files in `data/sidebars/` into the navigation shown on each page.
-2. **A set of pages**, Markdown files in `content/` and mounted Markdown files
+2. **A set of pages:** Markdown files in `content/` and mounted Markdown files
    from imported repositories. Hugo renders them to HTML using the templates in
    `layouts/`.
 
@@ -62,25 +62,32 @@ entries:
   product: Documentation
   folders:
   - title: Configuration
+    output: web, pdf
     folderitems:
     - title: Basics
       url: /configuration-introduction.html
+      output: web, pdf
       subfolders:
       - title: Coupling scheme
+        output: web, pdf
         subfolderitems:
         - title: Overview
           url: /configuration-coupling.html
+          output: web, pdf
 ```
 
-The `url` of each entry must match the rendered page URL. Keep the established
-`.html` URLs when moving an existing page, and use an alias when a page URL must
-change.
+The `url` of each entry must match the rendered page URL. The `output` field
+controls whether the entry appears on the website, in the compiled offline PDF
+(`web, pdf`), or only on the website (`web`). For details on PDF target
+filtering, see [Publish to PDF](/docs-meta-publish-to-pdf.html). Keep the
+established `.html` URLs when moving an existing page, and use an alias when a
+page URL must change.
 
 ### Where to save files
 
 Save website-owned Markdown files below `content/` in the section that owns
-them. Unlike Jekyll, the directory structure is meaningful to Hugo: a directory
-containing `_index.md` is a section and its path contributes to page URLs.
+them. The directory structure is meaningful to Hugo: a directory containing
+`_index.md` is a section and its path contributes to page URLs.
 
 ```text
 content/
@@ -89,6 +96,11 @@ content/
         └── basics/
             └── introduction.md
 ```
+
+To maintain backward compatibility with established top-level URLs (such as
+`/configuration-introduction.html`) without breaking external links or
+bookmarks, pages define `aliases` to redirect from flat URL patterns to
+their nested location.
 
 ### Naming conventions
 
@@ -114,7 +126,7 @@ summary: "Configure participants, meshes, exchanged data, mappings, and coupling
 ---
 ```
 
-Use `aliases` for additional legacy URLs:
+Use `aliases` to redirect previous URLs to the page:
 
 ```yaml
 aliases:
@@ -131,16 +143,26 @@ adapter, tutorial, or tool. This keeps documentation close to the code while
 presenting it in one place on the website. Hugo Modules mount that source
 content into the website's content tree.
 
-To add a new imported project:
+To add a new imported repository:
 
 1. Add its module import and mounts in `config/_default/module.toml`, and add
-   the corresponding edit-link mapping in the Hugo configuration.
-2. Run `hugo mod get github.com/precice/my-project@<revision>`.
-3. Run `hugo mod tidy` and `hugo mod verify`.
-4. Add the rendered pages to the appropriate sidebar when needed.
-5. Build the site and verify page URLs, edit links, and last-modified dates.
+   the corresponding edit-link mapping in `config/_default/params.toml`.
+2. Run `hugo mod get github.com/precice/my-project@<revision>` (to fetch and pin
+   the target commit or branch in `go.mod`).
+3. Run `hugo mod tidy` (to prune unused dependencies) and `hugo mod verify` (to
+   validate checksums in `go.sum`).
+4. Add the rendered pages to a sidebar file (`data/sidebars/`).
+5. Build the website locally (`hugo server`) and verify the page URLs,
+   edit links, and last-modified dates.
 
-The `Update Hugo modules` workflow checks the imported repositories and updates
-their selected revisions in `go.mod` and `go.sum`. Do not copy imported content
-into this repository or edit the downloaded module cache. Make content changes
-upstream, then update the recorded module revision.
+The `Update Hugo modules` workflow (`.github/workflows/update-submodules.yml`)
+automatically synchronizes imported repositories and records their selected
+revisions in `go.mod` and `go.sum`. External repositories (such as
+`precice/tutorials` and adapter repositories) include an `update-website.yml`
+GitHub Actions workflow that triggers this update whenever documentation pull
+requests are merged upstream, ensuring changes appear on the website
+immediately rather than waiting for the daily scheduled run.
+
+Do not copy imported content directly into this repository or edit the
+downloaded module cache. Always make content changes in the upstream
+repository, which will then automatically propagate to the website.
