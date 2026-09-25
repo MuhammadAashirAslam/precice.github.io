@@ -378,6 +378,13 @@ path = "github.com/precice/tutorials"
   source = "partitioned-pipe/images"
   target = "content/tutorials/partitioned-pipe/images"
 
+  [[imports.mounts]]
+  source = "partitioned-pipe-multiscale/README.md"
+  target = "content/tutorials/partitioned-pipe-multiscale/_index.md"
+
+  [[imports.mounts]]
+  source = "partitioned-pipe-multiscale/images"
+  target = "content/tutorials/partitioned-pipe-multiscale/images"
 
   [[imports.mounts]]
   source = "partitioned-pipe-two-phase/README.md"
@@ -395,6 +402,13 @@ path = "github.com/precice/tutorials"
   source = "perpendicular-flap/images"
   target = "content/tutorials/perpendicular-flap/images"
 
+  [[imports.mounts]]
+  source = "perpendicular-flap-stress/README.md"
+  target = "content/tutorials/perpendicular-flap-stress/_index.md"
+
+  [[imports.mounts]]
+  source = "perpendicular-flap-stress/images"
+  target = "content/tutorials/perpendicular-flap-stress/images"
 
   [[imports.mounts]]
   source = "quickstart/README.md"
