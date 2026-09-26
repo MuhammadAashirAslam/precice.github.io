@@ -395,30 +395,6 @@ path = "github.com/precice/tutorials"
   target = "content/tutorials/partitioned-pipe-two-phase/images"
 
   [[imports.mounts]]
-  source = "perpendicular-flap/README.md"
-  target = "content/tutorials/perpendicular-flap/_index.md"
-
-  [[imports.mounts]]
-  source = "perpendicular-flap/images"
-  target = "content/tutorials/perpendicular-flap/images"
-
-  [[imports.mounts]]
-  source = "perpendicular-flap-stress/README.md"
-  target = "content/tutorials/perpendicular-flap-stress/_index.md"
-
-  [[imports.mounts]]
-  source = "perpendicular-flap-stress/images"
-  target = "content/tutorials/perpendicular-flap-stress/images"
-
-  [[imports.mounts]]
-  source = "quickstart/README.md"
-  target = "content/tutorials/quickstart/_index.md"
-
-  [[imports.mounts]]
-  source = "quickstart/images"
-  target = "content/tutorials/quickstart/images"
-
-  [[imports.mounts]]
   source = "resonant-circuit/README.md"
   target = "content/tutorials/resonant-circuit/_index.md"
 
@@ -434,26 +410,7 @@ path = "github.com/precice/tutorials"
   source = "turek-hron-fsi3/images"
   target = "content/tutorials/turek-hron-fsi3/images"
 
-  [[imports.mounts]]
-  source = "two-scale-heat-conduction/README.md"
-  target = "content/tutorials/two-scale-heat-conduction/_index.md"
-
-  [[imports.mounts]]
-  source = "two-scale-heat-conduction/images"
-  target = "content/tutorials/two-scale-heat-conduction/images"
-
-  [[imports.mounts]]
-  source = "volume-coupled-diffusion/README.md"
-  target = "content/tutorials/volume-coupled-diffusion/_index.md"
-
-  [[imports.mounts]]
-  source = "volume-coupled-diffusion/images"
-  target = "content/tutorials/volume-coupled-diffusion/images"
-
-  [[imports.mounts]]
-  source = "volume-coupled-flow/README.md"
-  target = "content/tutorials/volume-coupled-flow/_index.md"
-
+ 
   [[imports.mounts]]
   source = "volume-coupled-flow/images"
   target = "content/tutorials/volume-coupled-flow/images"
@@ -466,13 +423,6 @@ path = "github.com/precice/tutorials"
   source = "water-hammer/images"
   target = "content/tutorials/water-hammer/images"
 
-  [[imports.mounts]]
-  source = "wolf-sheep-soil-creep/README.md"
-  target = "content/tutorials/wolf-sheep-soil-creep/_index.md"
-
-  [[imports.mounts]]
-  source = "wolf-sheep-soil-creep/images"
-  target = "content/tutorials/wolf-sheep-soil-creep/images"
 
   [[imports.mounts]]
   source = "tests/README.md"
