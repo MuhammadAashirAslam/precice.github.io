@@ -477,4 +477,11 @@ path = "github.com/precice/tutorials"
   [[imports.mounts]]
   source = "tests/README.md"
   target = "content/docs/dev-docs/system-tests/_index.md"
+  
+  [[imports.mounts]]
+  source = "Moretesting/README.md"
+  target = "content/tutorials/Moretesting/_index.md"
 
+  [[imports.mounts]]
+  source = "Moretesting/images"
+  target = "content/tutorials/Moretestingp/images"
