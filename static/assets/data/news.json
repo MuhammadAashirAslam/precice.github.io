@@ -13,6 +13,18 @@
       "description": "News, announcements, \u201cblog\u201d-like posts..."
     },
     {
+      "id": 3008,
+      "title": "preCICE Workshop 2027 - March 1-5 at Delft",
+      "slug": "precice-workshop-2027-march-1-5-at-delft",
+      "url": "https://precice.discourse.group/t/precice-workshop-2027-march-1-5-at-delft/3008",
+      "created_at": "2026-10-08T16:15:04.941Z",
+      "last_posted_at": "2026-10-08T16:15:05.007Z",
+      "like_count": 0,
+      "posts_count": 1,
+      "views": 10,
+      "description": "Call for contributions: preCICE Workshop 2027, Delft, March 1-5 The 7th preCICE Workshop will be held for the first time outside Germany, at the Delft University of Technology in The..."
+    },
+    {
       "id": 2861,
       "title": "First preCICE online training (Americas), October 5-9, 2026",
       "slug": "first-precice-online-training-americas-october-5-9-2026",
@@ -21,7 +33,7 @@
       "last_posted_at": "2026-09-21T07:54:05.243Z",
       "like_count": 6,
       "posts_count": 3,
-      "views": 162,
+      "views": 212,
       "description": "Registration closes on Friday, Sep 25. In October 5-9, 2026, we are organizing the first online preCICE training, mainly targeting participants in the US, Canada, and Latin America (time: 12\u20133..."
     },
     {
@@ -347,18 +359,6 @@
       "posts_count": 3,
       "views": 360,
       "description": "Call for papers Submission deadline: October 9, 2023 Workshop on Multi-scale, Multi-physics and Coupled Problems on Highly Parallel Systems (MMCP) at HPC Asia 2024, January 25 - 27, 2024, Nagoya,..."
-    },
-    {
-      "id": 1539,
-      "title": "preCICE goes Nix(OS) -- improving reproducibility of scientific software",
-      "slug": "precice-goes-nix-os-improving-reproducibility-of-scientific-software",
-      "url": "https://precice.discourse.group/t/precice-goes-nix-os-improving-reproducibility-of-scientific-software/1539",
-      "created_at": "2023-08-31T12:53:00.992Z",
-      "last_posted_at": "2023-08-31T12:53:01.088Z",
-      "like_count": 7,
-      "posts_count": 1,
-      "views": 541,
-      "description": "Introduction Hello everyone , we\u2019d like to present our research project on improving the reproducibility of scientific software using Nix and NixOS. We (Simon and Max) are two students doing..."
     }
   ]
 }
