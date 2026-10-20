@@ -15,7 +15,7 @@ There are various codes - free and proprietary ones - currently coupled with pre
 We host adapters for the following codes in the [preCICE GitHub organization](https://github.com/precice/) and we maintain them to work with the latest release of preCICE (unless stated otherwise).
 
 | Adapter for | Contact | Resources | Typical applications | Comments |
-| ---         | ---     | ---       | ---                  | ---      |
+| --- | --- | --- | --- | --- |
 | [CalculiX](https://www.calculix.de/) | preCICE Developers | [code](https://github.com/precice/calculix-adapter), [docs](adapter-calculix-overview.html) | Structure part in CHT, FSI | |
 | [code_aster](https://code-aster.org/) | preCICE Developers | [code](https://github.com/precice/code_aster-adapter), [docs](adapter-code_aster.html) | Structure part in CHT | |
 | [deal.II](https://www.dealii.org/) | preCICE Developers | [code](https://github.com/precice/dealii-adapter), [docs](adapter-dealii-overview.html) | Structure part in FSI, any FEM | |
@@ -32,8 +32,8 @@ We host adapters for the following codes in the [preCICE GitHub organization](ht
 The preCICE community has successfully coupled the following codes with preCICE for [community projects](community-projects.html).
 Wherever meaningful (license, maturity of the project, no other home), we host the code repository.
 
-| Adapter for | Contact | Resources | Typical applications | Comments |
-| ---         | ---     | ---       | ---                  | ---      |
+| Adapter for   | Contact | Resources | Typical applications | Comments |
+| --- | --- | --- | --- | --- |
 | [Alya](https://www.bsc.es/research-development/research-areas/engineering-simulations/alya-high-performance-computational) | [Benjamin Uekermann](https://github.com/uekerman) | | Fluid and structure part in FSI | Not actively maintained (but not abandoned) |
 | [Ansys Fluent](https://www.ansys.com/products/fluids/ansys-fluent) | preCICE Developers | [code](https://github.com/precice/fluent-adapter), [docs](https://github.com/precice/fluent-adapter/wiki) | Fluid part in FSI | Experimental |
 | [Ateles (APES)](https://apes-suite.org/ateles/) | [APES team](https://apes-suite.org/pages/impressum) | [code](https://github.com/apes-suite/ateles) | Fluid-Acousting, Fluid-Fluid coupling | |
@@ -44,6 +44,7 @@ Wherever meaningful (license, maturity of the project, no other home), we host t
 | [ExaDG](https://github.com/exadg/exadg) | [David Schneider, US](https://www.ipvs.uni-stuttgart.de/institute/team/Schneider-00056/) | [code](https://github.com/exadg/exadg/tree/master/applications/fluid_structure_interaction/perpendicular_flap) | Fluid or Structure part in FSI | |
 | [FASTEST](https://www.maschinenbau.tu-darmstadt.de/fnb/fnb_research/fnb_fastest/index.en.jsp) | [TU Darmstadt FNB](https://www.fnb.tu-darmstadt.de/) | None | Fluid-Structure-Acoustics interaction | |
 | [FEAP](http://projects.ce.berkeley.edu/feap/) | [TU Darmstadt FNB](https://www.fnb.tu-darmstadt.de/) | None | Structure part in FSI | |
+| [FEBio](https://febio.org/) | [Carme Homs-Pons, US](https://www.ipvs.uni-stuttgart.de/institute/team/Homs-Pons/) | [code](https://github.com/carme-hp/FEBio-adapter)  | Structure part in electromechanics | |
 | [G+Smo](https://gismo.github.io/) | [TU Delft Numerical Analysis](https://www.tudelft.nl/en/eemcs/the-faculty/departments/applied-mathematics/numerical-analysis/) |[code](https://github.com/gismo/gsPreCICE) | Structure part in FSI ||
 | [ISSM](https://github.com/ISSMteam/ISSM) | [Daniel Abele](https://github.com/dabele), [DLR Software Technology](https://www.dlr.de/sc/) | [code](https://git.rwth-aachen.de/terrabyte-dnn2sim/issm-precice) | Ice sheet model | |
 | [LIGGGHTS](https://www.cfdem.com/media/DEM/docu/Manual.html) | [via Discourse](https://precice.discourse.group/t/flexible-mesh-particle-coupling-with-precice/2616) | [code](https://github.com/r-walloner/LIGGGHTS-PUBLIC) | DEM part in CFD-DEM | see also: [validated case](https://doi.org/10.18419/DARUS-5494) |
@@ -60,8 +61,8 @@ Wherever meaningful (license, maturity of the project, no other home), we host t
 
 These adapters and/or the respective solvers are not maintained and might not work anymore, but are listed here as an example of which other projects have used preCICE in the past.
 
-| Adapter for | Contact | Resources | Typical applications | Comments |
-| ---         | ---     | ---       | ---                  | ---      |
+| Adapter for   | Contact | Resources | Typical applications | Comments |
+| --- | --- | --- | --- | --- |
 | [Carat++](https://www.cee.ed.tum.de/en/st/software/research/carat/) | [TUM Statik](https://www.cee.ed.tum.de/en/st/home/) | None | Structure part of FSI | |
 | [EFD](https://github.com/precice/efd) | [TUM SCCS](https://www.cs.cit.tum.de/en/sccs/home/) | [code](https://github.com/precice/efd) | Fluid part of FSI | |
 | [foam-extend](https://sourceforge.net/projects/foam-extend/) | [TU Delft Aerodynamics](https://www.tudelft.nl/index.php?id=4542&L=1) | [code](https://github.com/davidsblom/FOAM-FSI) | Fluid and structure part of FSI, Fluid-Fluid coupling | |

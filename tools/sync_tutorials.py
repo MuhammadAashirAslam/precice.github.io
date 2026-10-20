@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
-"""Synchronize tutorial Hugo module mounts from precice/tutorials.
-
-Automates the synchronization of tutorial Hugo module mounts from the
-precice/tutorials repository into config/_default/module.toml.
-
-This script creates a local shallow clone of precice/tutorials (using a temporary
-directory in memory), discovers all tutorial cases and images, and updates Hugo
-module mounts in config/_default/module.toml.
-
-Usage:
-  python3 tools/sync_tutorials.py
-  python3 tools/sync_tutorials.py --module-toml config/_default/module.toml
-"""
+"""Synchronize tutorial Hugo module mounts from precice/tutorials."""
 
 import argparse
 import logging

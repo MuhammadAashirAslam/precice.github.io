@@ -26,14 +26,14 @@ Releases originate from the `master` branch.
 
 We recommend that you start from one of the following cases, which you can quickly run on your laptop:
 
-- [Flow over a heated plate](tutorials-flow-over-heated-plate.html): A **conjugate heat transfer** scenario. Try OpenFOAM, SU2, FEniCS, FEniCSx, Nutils, or DUNE-FEM.
+- [Flow over a heated plate](tutorials-flow-over-heated-plate.html): A **conjugate heat transfer** scenario. Try DUNE-FEM, FEniCS, FEniCSx, MFEM, Nutils, OpenFOAM, or SU2.
 - [Partitioned heat conduction](tutorials-partitioned-heat-conduction.html): The mathematician's dream: split the **heat equation** in two and glue it again. Pick your Dirichlet and Neumann solvers among FEniCS, FEniCSx, G+Smo, Nutils, and OpenFOAM.
 - Flow in a channel with an elastic [perpendicular flap](tutorials-perpendicular-flap.html): A **fluid-structure interaction** scenario. Feel free to combine different solvers, among OpenFOAM, SU2, deal.II, FEniCS, Nutils, CalculiX, solids4Foam, and DUNE.
 
 <p style="text-align: center">
-<a href="tutorials-flow-over-heated-plate.html" title="Tutorial: Flow over heated plate"><img src="/images/tutorials-flow-over-heated-plate-example.png" style="margin-left:3%; max-width:31%; max-height:100px;" alt="Flow over heated plate"></a>
-<a href="tutorials-partitioned-heat-conduction.html" title="Tutorial: Partitioned heat conduction"><img src="/images/tutorials-partitioned-heat-conduction-setup.png" style="max-width:31%; max-height:100px;" alt="Partitioned heat conduction"></a>
-<a href="tutorials-perpendicular-flap.html" title="Tutorial: Perpendicular flap"><img src="/images/tutorials-perpendicular-flap-physics.png" style="margin-left:3%; max-width:31%; max-height:100px;" alt="Flow with a perpendicular flap"></a>
+<a href="/tutorials/flow-over-heated-plate/" title="Tutorial: Flow over heated plate"><img src="/tutorials/flow-over-heated-plate/images/tutorials-flow-over-heated-plate-example.png" style="margin-left:3%; max-width:31%; max-height:100px;" alt="Flow over heated plate"></a>
+<a href="/tutorials/partitioned-heat-conduction/" title="Tutorial: Partitioned heat conduction"><img src="/tutorials/partitioned-heat-conduction/images/tutorials-partitioned-heat-conduction-setup.png" style="max-width:31%; max-height:100px;" alt="Partitioned heat conduction"></a>
+<a href="/tutorials/perpendicular-flap/" title="Tutorial: Perpendicular flap"><img src="/tutorials/perpendicular-flap/images/tutorials-perpendicular-flap-physics.png" style="margin-left:3%; max-width:31%; max-height:100px;" alt="Flow with a perpendicular flap"></a>
 </p>
 
 ## All cases
@@ -83,7 +83,7 @@ In the following cases, you can explore different aspects of preCICE:
 - [Two-scale heat conduction](tutorials-two-scale-heat-conduction.html): A heat conduction scenario with an underlying micro-structure which is resolved to get the constitutive properties on the macro scale. Coupling DuMux and Nutils based solvers.
 - [Volume-coupled diffusion](tutorials-volume-coupled-diffusion.html): An experimental volume coupling scenario, with two FEniCS solvers.
 - [Volume-coupled flow](tutorials-volume-coupled-flow.html): An experimental volume coupling scenario, coupling a source term coded in Nutils with a flow in OpenFOAM.
-- [Wolf-sheep-grass model with soil creep](tutorials-wolf-sheep-soil-creep.html): An agent-based wolf-sheep-grass model in MESA coupled with a soil creep model in Landlab.
+- [Wolf-sheep-grass model with soil creep](tutorials-wolf-sheep-soil-creep.html): An agent-based wolf-sheep-grass model in MESA coupled with a soil creep model in Landlab. A simplified and standalone Landlab implementation, as well as a FEniCSx-based solver are also available.
 
 ## Community projects
 

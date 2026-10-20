@@ -11,7 +11,7 @@ entries:
     folderitems:
 
     - title: Overview
-      url: /docs/
+      url: /docs/fundamentals/overview/
       output: web, pdf
 
     - title: Terminology
@@ -272,8 +272,8 @@ entries:
           url: /docs/tooling/micro-manager/adaptivity/
           output: web, pdf
 
-        - title: Model adaptivity
-          url: /docs/tooling/micro-manager/model-adaptivity/
+        - title: Model switching
+          url: /docs/tooling/micro-manager/model-switching/
           output: web, pdf
 
         - title: Snapshot Computation

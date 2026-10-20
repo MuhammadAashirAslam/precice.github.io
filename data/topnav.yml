@@ -5,16 +5,16 @@ topnav:
 - title: Topnav
   items:
     - title: Quickstart
-      url: /quickstart.html
+      url: /tutorials/quickstart/
       section:
     - title: Docs
-      url: /docs.html
+      url: /docs/fundamentals/overview/
       section: docs
     - title: Tutorials
-      url: /tutorials.html
-      section: tutorial
+      url: /tutorials/overview/
+      section: tutorials
     - title: Community
-      url: /community.html
+      url: /community/overview/
       section: community
     - title: Blog
       external_url: https://precice.discourse.group/c/news
